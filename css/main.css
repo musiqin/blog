@@ -58,3 +58,7 @@ div.content-block h2 {
 div.content-block p {
   color: #666666;
 }
+
+ul.posts span {
+  color: #eeeeee;
+}
