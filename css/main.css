@@ -62,3 +62,6 @@ div.content-block p {
 ul.posts span {
   color: #151515;
 }
+.posts-arrow {
+  padding-left: 40px;
+}
