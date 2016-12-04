@@ -1,6 +1,0 @@
----
-layout: post
-title: "been working on it"
-date: 2016-10-26
----
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vulputate risus lacus, eleifend imperdiet ante rhoncus ac. Proin id aliquam velit. Quisque vulputate est ut arcu bibendum, in semper lectus pellentesque. Fusce id malesuada odio. Vestibulum eu lacus odio. Quisque ornare, purus sed viverra congue, justo elit molestie sem, sed porta tellus purus id risus. Mauris eleifend pretium urna, tristique aliquet tortor lacinia vel. Proin et eros sed enim vehicula gravida eu feugiat tellus. Sed in odio at neque scelerisque pharetra.
