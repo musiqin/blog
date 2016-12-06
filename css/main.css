@@ -65,7 +65,7 @@ ul.posts span {
 .section.main {
   background-color: #f5f8fa;
 }
-.card-header {
+.splash-header {
     background-image: url("https://source.unsplash.com/1600x900/daily");
     background-position: 0 50%;
     background-size: 100% auto;
