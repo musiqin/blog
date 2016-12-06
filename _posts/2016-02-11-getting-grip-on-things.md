@@ -1,7 +1,15 @@
 ---
 layout: post
-title: "Getting a grip on things"
-date: 2016-12-04
+title: "Beginning - The start of my new blog!"
+date: 2016-12-06
 ---
-> I have been partly confused and somewhat concentrated on lots of things, i think i need to slow down and do "one thing at a time."
-> for that settled. i am going to concentrate my time on completing OS/161
+> Created a new blog using jekyll static site generator. Forked repo from another user fatzombi@github.
+><b>plans:</b>
+>-redesign the blog
+>-make projects page attractive
+>-add disqus
+>-configure a domain to github
+>-embrace github :D
+>-PROFIT ?? :P
+>
+>Will add things that i learn and more...
