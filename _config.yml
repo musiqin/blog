@@ -1,3 +1,3 @@
 name: MobiHacK
 markdown: kramdown
-permalink: /blog/:year/:month/title.html
+permalink: /blog/:year/:month/:title.html
