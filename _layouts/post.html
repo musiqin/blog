@@ -1,8 +1,62 @@
 {% include header.html %}
-<h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
-<div class="post">
-  {{ content }}
-</div>
+<section class="hero is-default is-small post-banner">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          <h1>{{ page.title }}</h1>
+        </h1>
+        <h2 class="subtitle">
+          by @mobihack
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="section blog">
+    <div class="container">
+      <div class="columns is-mobile">
+        <div class="column is-8 is-offset-2">
+          <div class="box content blog-post">
+            <p class="has-text-right has-text-muted">{{ page.date | date_to_string }}</p>
+            <p>{{ content }}</p>
+          </div>
+          <div class="card is-fullwidth">
+            <header class="card-header">
+              <p class="card-header-title">
+                About the author
+              </p>
+              <a class="card-header-icon" href="#top">
+                <i class="fa fa-angle-up"></i>
+              </a>
+            </header>
+            <div class="card-content">
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-64x64">
+                    <img src="http://placehold.it/128x128" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>Shameem A.R</strong> <small>@mobihack</small>
+                      <br>
+                      Basic bio
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item" href="http://www.facebook.com/sharer.php?u=http://rockitech.net/blog/2016/12/beginning.html">
+			    <span class="icon is-small"><i class="fa fa-facebook"></i></span> Share on Facebook</a>
+                    <a class="card-footer-item" href="http://twitter.com/share?url=http://rockitech.net/blog/2016/12/beginning.html&amp;text=Beginning - The start of my new blog!">
+			<span class="icon is-small"><i class="fa fa-twitter"></i></span> Share on Twitter</a>
+                    <a class="card-footer-item" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=http://rockitech.net/blog/2016/12/beginning.html">    
+			<span class="icon is-small"><i class="fa fa-google-plus"></i></span> Share on G+</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% include footer.html %}
