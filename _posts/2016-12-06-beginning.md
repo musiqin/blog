@@ -6,11 +6,11 @@ author: "mobihack"
 ---
 Created a new blog using jekyll static site generator. Forked repo from another user fatzombi@github.
 <br><b>plans:</b>
-[ ] redesign the blog
-[ ] make projects page attractive
-[ ] add disqus
-[ ] configure a domain to github
-[ ] embrace github :D
-[ ] PROFIT ?? :P
+- [ ] redesign the blog
+- [ ] make projects page attractive
+- [ ] add disqus
+- [ ] configure a domain to github
+- [ ] embrace github :D
+- [ ] PROFIT ?? :P
 <br>
 <br>Will add things that i learn and more...
