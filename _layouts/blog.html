@@ -51,6 +51,7 @@
           <div class="box">
             <p><span class="title is-5">Who to follow</span> · <a href="#">Refresh</a> · <a href="#">View All</a></p>
             <hr>
+            {% for member in site.data.users %}
             <div class="columns">
               <div class="column is-3 is-marginless">
                 <div class="image">
@@ -60,65 +61,18 @@
               <div class="column is-9">
                 <p>
                   <a href="#">
-                    <strong>John Smith</strong>
-                    &commat;jsmith
-                  </a> 
-                  <a href="#">
-                    <i class="fa fa-times"></i>
+                    <strong>{{ member.name }}</strong>
+                    &commat;{{ member.id }}
                   </a>
                 </p>
-                <a class="button is-primary is-small">
+                <a class="button is-primary is-small" href="http://github.com/{{ member.github }}">
                   <span>
-                    + Follow
+                    + github
                   </span>
                 </a>
               </div>
             </div>
-            <div class="columns">
-              <div class="column is-3 is-marginless">
-                <div class="image">
-                  <img src="https://placehold.it/200x200">
-                </div>
-              </div>
-              <div class="column is-9">
-                <p>
-                  <a href="#">
-                    <strong>Jane Smith</strong>
-                    &commat;janesmith
-                  </a> 
-                  <a href="#">
-                    <i class="fa fa-times"></i>
-                  </a>
-                </p>
-                <a class="button is-primary is-small">
-                  <span>
-                    + Follow
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="column is-3 is-marginless">
-                <div class="image">
-                  <img src="https://placehold.it/200x200">
-                </div>
-              </div>
-              <div class="column is-9">
-                <p>
-                  <a href="#">
-                    <strong>Mike Scott</strong>
-                    &commat;mscott
-                  </a> 
-                  <a href="#">
-                    <i class="fa fa-times"></i>
-                  </a>
-                </p>
-                <a class="button is-primary is-small">
-                  <span>
-                    + Follow
-                  </span>
-                </a>
-              </div>
+            {% endfor %}
             </div>
 
           </div>

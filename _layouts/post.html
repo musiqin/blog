@@ -1,16 +1,17 @@
 {% include header.html %}
-<section class="hero is-default is-small post-banner splash-header" style="height:auto; color:white;">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          <h1>{{ page.title }}</h1>
-        </h1>
-        <h2 class="subtitle" style="color:lightgrey">
-          by @mobihack
-        </h2>
-      </div>
+<section class="hero is-default is-small post-banner splash-header" style="">
+  <div class="hero-body"  id="title-box">
+    <div class="container glass-overlay">
+      <h1 style="color: white;" class="title">
+        {{ page.title }}
+      </h1>
+
+      <h2 class="subtitle" style="color:lightgrey">
+        by @{{ page.author }}
+      </h2>
     </div>
-  </section>
+  </div>
+</section>
   <section class="section blog">
     <div class="container">
       <div class="columns">
@@ -38,25 +39,28 @@
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong>Shameem A.R</strong> <small>@mobihack</small>
+                      <strong>{{ site.data.users[page.author].name }}</strong> <small>@{{ page.author }}</small>
                       <br>
-                      Basic bio
+                      {{ site.data.users[page.author].bio }}
                     </p>
                   </div>
                 </div>
               </article>
             </div>
             <footer class="card-footer">
-              <a class="card-footer-item" href="http://www.facebook.com/sharer.php?u=http://rockitech.net/blog/2016/12/beginning.html">
-			    <span class="icon is-small"><i class="fa fa-facebook"></i></span> Share on Facebook</a>
-                    <a class="card-footer-item" href="http://twitter.com/share?url=http://rockitech.net/blog/2016/12/beginning.html&amp;text=Beginning - The start of my new blog!">
-			<span class="icon is-small"><i class="fa fa-twitter"></i></span> Share on Twitter</a>
-                    <a class="card-footer-item" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=http://rockitech.net/blog/2016/12/beginning.html">    
-			<span class="icon is-small"><i class="fa fa-google-plus"></i></span> Share on G+</a>
+              <a class="card-footer-item" href="http://www.facebook.com/sharer.php?u={{ page.url | absolute_url }}">
+                <span class="icon is-small"><i class="fa fa-facebook"></i></span><span class="is-hidden-mobile"> Share on Facebook</span></a>
+                    <a class="card-footer-item" href="http://twitter.com/share?url={{ page.url | absolute_url }}&amp;text={{ page.title }}">
+                      <span class="icon is-small"><i class="fa fa-twitter"></i></span><span class="is-hidden-mobile"> Share on Twitter</span></a>
+                    <a class="card-footer-item" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={{ page.url | absolute_url }}">
+			<span class="icon is-small"><i class="fa fa-google-plus"></i></span> <span class="is-hidden-mobile"> Share on G+</span></a>
             </footer>
           </div>
         </div>
       </div>
+      {% for relpost in site.related_posts %}
+      {{ relpost }}
+      {% endfor %}
     </div>
   </section>
 {% include footer.html %}

@@ -1,4 +1,9 @@
-mobihack:
-    name: Shameem A.R.
+-   name: Shameem A.R.
+    id: mobihack
     github: mobihack
-    about: mobihack is an experienced PHP Developer with skills in front-end development. In his leisure time, he likes to listn to EDM Music, read books, or learn something new in programming!
+    bio: mobihack is an experienced PHP Developer with skills in front-end development. In his leisure time, he likes to listen to EDM Music, read books, or learn something new in programming!
+
+-   name: Shameem A.R.2
+    id: mobihack2
+    github: mobihack2
+    bio: mobihack2 is an experienced PHP Developer with skills in front-end development. In his leisure time, he likes to listen to EDM Music, read books, or learn something new in programming!

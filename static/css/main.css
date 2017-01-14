@@ -156,3 +156,19 @@ ul.card-stats-list {
 .trending .trend-hashtag {
   padding-bottom: 8px;
 }
+.splash-header{
+    height: auto; color: white; background-color: rgb(0, 209, 178);
+}
+.glass-overlay{
+    background-color: rgba(0, 0, 0, 0.5); padding: 2em;
+}
+@media screen and (max-width: 600px) {
+
+    #title-box{
+        padding: 0px;
+    }
+    .glass-overlay{
+        padding: 4em;
+        width: 100%;
+    }
+}

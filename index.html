@@ -14,7 +14,7 @@ title: rockitech.net - Blog
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>@mobihack</strong> <small style="float:right;">{{ post.date | date_to_string }}</small>
+                    <strong>@{{ post.author }}</strong> <small style="float:right;">{{ post.date | date_to_string }}</small>
                     <br>
                     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </p>
