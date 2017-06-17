@@ -5,22 +5,25 @@ permalink: /feed/
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-	<title>FATZOMBI's blog</title>
+	<title>RockiTech Blog</title>
 	<link href="atom.xml" rel="self"/>
 	<link href="/blog"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
 	<id>/blog</id>
 	<author>
-		<name>FATZOMBI</name>
+		<name>mobihack</name>
 		<email></email>
 	</author>
 
 	{% for post in site.posts %}
 		<entry>
 			<title>{{ post.title }}</title>
-			<link href="http://fatzombi.github.io{{ post.url }}"/>
+			<author>
+  				<name>John Doe</name>
+			</author>
+			<link href="http://rockitech.net{{ post.url | absolute }}"/>
 			<updated>{{ post.date | date_to_xmlschema }}</updated>
-			<id>http://fatzombi.github.io/{{ post.id }}</id>
+			<id>http://rockitech.net{{ post.id }}</id>
 			<content type="html">{{ post.content | xml_escape }}</content>
 		</entry>
 	{% endfor %}
