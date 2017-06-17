@@ -71,7 +71,7 @@ ul.posts span {
     background-size: 100% auto;
     border-bottom: 1px solid #e1e8ed;
     border-radius: 4px 4px 0 0;
-    height: 95px;
+    height: 64px;
     width: 100%;
 }
 .card-content {
@@ -148,7 +148,9 @@ ul.card-stats-list {
 .spacer {
   height:20px;
 }
-
+img.image-is-round,figure.image-is-round img{
+  border-radius: 50%;
+}
 .trending .trend-title {
   padding-bottom: 10px;
 }
@@ -156,11 +158,12 @@ ul.card-stats-list {
 .trending .trend-hashtag {
   padding-bottom: 8px;
 }
-.splash-header{
-    height: auto; color: white; background-color: rgb(0, 209, 178);
+.splash-header-main{
+  height: auto;
+    color: white; background-color: rgb(0, 209, 178);
 }
 .glass-overlay{
-    background-color: rgba(0, 0, 0, 0.5); padding: 2em;
+    background-color: rgba(0, 0, 0, 0.5); padding: 3em;
 }
 @media screen and (max-width: 600px) {
 

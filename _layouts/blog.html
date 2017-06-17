@@ -1,4 +1,5 @@
 {% include header.html %}
+
 <section class="section main">
     <div class="container">
       <div class="columns">
@@ -24,60 +25,75 @@
               </div>
             </div>
           </div>
-          <div class="spacer"></div>
+          
           <div class="box trending">
-            <p class="trend-title"><span class="title is-5">Trends</span> · <a href="#">change</a></p>
-            <p class="trend-hashtag"><a href="#">#hashtag1</a><br>13k statuses</p>
-            <p class="trend-hashtag"><a href="#">#hashtag2</a><br>29k statuses</p>
-            <p class="trend-hashtag"><a href="#">#hashtag3</a><br>2k statuses</p>
-            <p class="trend-hashtag"><a href="#">#hashtag4</a><br>9k statuses</p>
-            <p class="trend-hashtag"><a href="#">#hashtag5</a><br>18k statuses</p>
-            <p class="trend-hashtag"><a href="#">#hashtag6</a><br>168k statuses</p>
+            <p class="trend-title"><span class="title is-5">Categories</span></p>
+            {% assign tags_list = site.categories %}  
+              {% if tags_list.first[0] == null %}
+                {% for tag in tags_list %} 
+                  <p class="trend-hashtag"><a href="/blog/categories.html#{{ tag }}">#{{ tag | capitalize }}</a><br>{{ site.tags[tag].size }} posts</p>
+                {% endfor %}
+              {% else %}
+                {% for tag in tags_list %} 
+                <p class="trend-hashtag"><a href="/blog/categories.html#{{ tag[0] }}">#{{ tag[0] | capitalize }}</a><br>{{ tag[1].size }} posts</p>
+                {% endfor %}
+              {% endif %}
+            {% assign tags_list = nil %}
           </div>
         </div>
         <div class="column is-6">
-          <div class="notification is-danger">
+          <!--<div class="notification is-danger">
             <button class="delete" onclick="((this).parentNode.remove())"></button>
             This blog is not yet finished, it may change. Please wait for the full version.
-          </div>
+          </div>-->
           <div class="box">
-              <h2 class="title">Blog</h2>
-              <hr>
+              
             {{ content }}
 
           </div>
         </div>
         <div class="column is-3">
           <div class="box">
-            <p><span class="title is-5">Who to follow</span> · <a href="#">Refresh</a> · <a href="#">View All</a></p>
+            <p><span class="title is-5">About</span></p>
+            <hr>
+            <p class="small">Basically most of our post adresses problems we had difficulty finding an answer by ouselves or searching online. We also post articles related to new technologies and tools in the fields of web designing, programming and server management.</p>
+            </div>
+
+          <div class="box">
+            <p><span class="title is-5">Who to follow</span></p>
             <hr>
             {% for member in site.data.users %}
             <div class="columns">
               <div class="column is-3 is-marginless">
                 <div class="image">
-                  <img src="https://placehold.it/200x200">
+                <figure class="image is-48x48">
+                  <img src="https://github.com/{{ member.github }}.png?size=48" style="border-radius: 50%">
+                </figure>
                 </div>
               </div>
               <div class="column is-9">
                 <p>
                   <a href="#">
                     <strong>{{ member.name }}</strong>
-                    &commat;{{ member.id }}
+                    <small>&commat;{{ member.id }}</small>
                   </a>
                 </p>
                 <a class="button is-primary is-small" href="http://github.com/{{ member.github }}">
-                  <span>
-                    + github
-                  </span>
+                    <span class="icon">
+      <i class="fa fa-github"></i>
+    </span>
+    <span>follow</span>
                 </a>
               </div>
             </div>
             {% endfor %}
             </div>
-
+          
           </div>
         </div>
       </div>
     </div>
   </section>
+<ul>
+
 {% include footer.html %}

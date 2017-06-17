@@ -3,9 +3,13 @@ layout: post
 title: "Beginning - The start of my new blog!"
 date: 2016-12-06
 author: "mobihack"
+category: General
+tags: [general, announcement]
 ---
 Created a new blog using jekyll static site generator. Forked repo from another user fatzombi@github.
 <br><b>plans:</b>
+
+
 - [ ] redesign the blog
 - [ ] make projects page attractive
 - [ ] add disqus

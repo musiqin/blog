@@ -1,9 +1,19 @@
--   name: Shameem A.R.
+-   name: Amal
+    id: thecodefreak
+    github: thecodefreak
+    bio: Write bio amal
+
+-   name: Rajat
+    id: rajat
+    github: feat7
+    bio: Write bio rajat
+
+-   name: Shameem
     id: mobihack
     github: mobihack
     bio: mobihack is an experienced PHP Developer with skills in front-end development. In his leisure time, he likes to listen to EDM Music, read books, or learn something new in programming!
-
--   name: Shameem A.R.2
-    id: mobihack2
-    github: mobihack2
-    bio: mobihack2 is an experienced PHP Developer with skills in front-end development. In his leisure time, he likes to listen to EDM Music, read books, or learn something new in programming!
+    
+-   name: Vinay
+    id: feat7
+    github: feat7
+    bio: Write bio vinay

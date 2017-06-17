@@ -1,6 +1,6 @@
 {% include header.html %}
-<section class="hero is-default is-small post-banner splash-header" style="">
-  <div class="hero-body"  id="title-box">
+<section class="hero is-default is-small post-banner splash-header splash-header-main" style="">
+  <div class="hero-body" id="title-box">
     <div class="container glass-overlay">
       <h1 style="color: white;" class="title">
         {{ page.title }}
@@ -12,14 +12,26 @@
     </div>
   </div>
 </section>
+  
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+
   <section class="section blog">
     <div class="container">
       <div class="columns">
-        <div class="column is-10 is-offset-1">
-          <div class="box content blog-post">
+        <div class="column is-8 is-offset-2">
+          <div class="content blog-post">
             <p class="has-text-right has-text-muted">{{ page.date | date_to_string }}</p>
-            <p>{{ content }}</p>
+            
+            {{ content }}
+            
           </div>
+          
+          <div class="spacer"></div>
+          <div class="spacer"></div>
+
+          {% assign userData = site.data.users | where: "id", page.author | first %}
+
           <div class="card is-fullwidth">
             <header class="card-header">
               <p class="card-header-title">
@@ -32,16 +44,16 @@
             <div class="card-content">
               <article class="media">
                 <div class="media-left">
-                  <figure class="image is-64x64">
-                    <img src="http://placehold.it/128x128" alt="Image">
+                  <figure class="image is-64x64 image-is-round">
+                    <img src="https://github.com/{{ userData.github }}.png?size=128" alt="Image">
                   </figure>
                 </div>
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong>{{ site.data.users[page.author].name }}</strong> <small>@{{ page.author }}</small>
+                      <strong>{{ userData.name }}</strong> <a href="http://github.com/{{ userData.github }}"><small>@{{ page.author }}</small></a>
                       <br>
-                      {{ site.data.users[page.author].bio }}
+                      {{ userData.bio }}
                     </p>
                   </div>
                 </div>
