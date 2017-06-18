@@ -1,7 +1,10 @@
-name: MobiHacK
-markdown: kramdown
+name: RockiTech
+markdown:    kramdown
+highlighter: pygments
+kramdown:  
+  parse_block_html: true
 permalink: /blog/:title.html
-paginate: 5
+paginate: 8
 paginate_path: "/blog/page:num/"
 gems:
   - jekyll-seo-tag
