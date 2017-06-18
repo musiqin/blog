@@ -74,6 +74,7 @@ ul.posts span {
     height: 64px;
     width: 100%;
 }
+
 .card-content {
     padding: 0px;
 }
@@ -96,7 +97,7 @@ ul.posts span {
   width: 72px;
 }
 .card-user {
-    margin: 5px 0 0;
+    margin: -20px 0 0;
 }
 .card-user-name{
     font-size: 18px;

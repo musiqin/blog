@@ -1,9 +1,11 @@
 ---
 layout: blog
 permalink: /blog/
-title: Blog
+title: rockitech.net - Blog
 ---
-	  {% for post in site.posts %}
+<h2 class="title">Blog</h2>
+              <hr>
+    {% for post in site.posts %}
 
 <article class="media">
               <div class="media-left">
@@ -14,25 +16,29 @@ title: Blog
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>@mobihack</strong> <small style="float:right;">{{ post.date | date_to_string }}</small>
+                    <strong>@{{ post.author }}</strong> <small style="float:right;">{{ post.date | date_to_string }}</small>
                     <br>
                     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                   </p>
                 </div>
                 <nav class="level">
                   <div class="level-left">
-                    <a class="level-item" href="http://www.facebook.com/sharer.php?u={{ post.url | absolute_url }}">
-			    <span class="icon is-small"><i class="fa fa-facebook"></i></span></a>
-                    <a class="level-item" href="http://twitter.com/share?url={{ post.url | absolute_url }}&text={{ post.title }}">
-			<span class="icon is-small"><i class="fa fa-twitter"></i></span></a>
-                    <a class="level-item" href="https://plusone.google.com/_/+1/confirm?hl=en&url={{ post.url | absolute_url }}">    
-			<span class="icon is-small"><i class="fa fa-google-plus"></i></span></a>
-                  </div>
+                    <a class="level-item" href="http://www.facebook.com/sharer.php?u={{ post.url | absolute_url }}" target="_blank">
+              <span class="icon is-small"><i class="fa fa-facebook"></i></span></a>
+                    <a class="level-item" href="http://twitter.com/share?url={{ post.url | absolute_url }}&text={{ post.title }}" target="_blank">
+            <span class="icon is-small"><i class="fa fa-twitter"></i></span></a>
+                  <a class="level-item" href="https://plusone.google.com/_/+1/confirm?hl=en&url={{ post.url | absolute_url }}" target="_blank">    
+            <span class="icon is-small"><i class="fa fa-google-plus"></i></span></a>
+                 </div>
+                 <div class="level right">{% for tag in post.categories %}
+       <a class="tag" href="/blog/categories.html#{{ tag | slugify }}">{{ tag }}</a> 
+     {% endfor %}</div>
                 </nav>
+
               </div>
             </article>
 
-	  {% endfor %}
+    {% endfor %}
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
