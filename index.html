@@ -11,7 +11,7 @@ title: rockitech.net - Blog
                 <figure class="image is-64x64">
                   {% if post.image %}
                   <img src="{{ post.image[0].url }}" alt="{{ post.image[0].alt }}" title="{{ post.image[0].title }}" />
-                  
+
                   {% else %}
                   <canvas width="64" height="64" class="identicons" data-jdenticon-url="hashCode('{{ post.url |slugify }}')"></canvas>
                   {% endif %}
@@ -43,24 +43,7 @@ title: rockitech.net - Blog
             </article>
 
 	  {% endfor %}
-    <script type="text/javascript">
- String.prototype.hashCode = function() {
-  var hash = 0, i, chr;
-  if (this.length === 0) return hash;
-  for (i = 0; i < this.length; i++) {
-    chr   = this.charCodeAt(i);
-    hash  = ((hash << 5) - hash) + chr;
-    hash |= 0; // Convert to 32bit integer
-  }
-  return (hash >>> 0);
-};
-      var cusid_ele = document.getElementsByClassName('identicons');
-    for (var i = 0; i < cusid_ele.length; ++i) {
-      var item = cusid_ele[i];  
-      item.setAttribute('data-jdenticon-hash','555'+item.getAttribute("data-jdenticon-url").hashCode());
-    }
-    jdenticon();
-    </script>
+    
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
