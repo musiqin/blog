@@ -176,3 +176,6 @@ img.image-is-round,figure.image-is-round img{
         width: 100%;
     }
 }
+pre.highlight code{
+  white-space: pre-wrap;
+}
