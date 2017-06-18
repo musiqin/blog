@@ -5,6 +5,11 @@ date: 2016-12-06
 author: "mobihack"
 category: General
 tags: [general, announcement]
+images:
+
+  - url: /static/img/cypripedium-calceolum.jpg
+    alt: Cypripedium Calceolum
+    title: Cypripedium Calceolum
 ---
 Created a new blog using jekyll static site generator. Forked repo from another user fatzombi@github.
 <br><b>plans:</b>

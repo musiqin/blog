@@ -6,10 +6,10 @@ permalink: /feed/
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>RockiTech Blog</title>
-	<link href="http://rockitech.net/feed/" rel="self"/>
+	<link href="{{ site.url }}/feed/" rel="self"/>
 	<link href="/blog"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>http://rockitech.net/blog</id>
+	<id>{{ site.url }}/blog</id>
 	<author>
 		<name>mobihack</name>
 		<email>mobihack.me@gmail.com</email>
@@ -21,7 +21,7 @@ permalink: /feed/
 			<author>
   				<name>{{ post.author }}</name>
 			</author>
-			<link href="http://rockitech.net{{ post.url | absolute }}"/>
+			<link href="{{ site.url }}{{ post.url | absolute }}"/>
 			<updated>{{ post.date | date_to_xmlschema }}</updated>
 			<id>http://rockitech.net{{ post.id }}</id>
 			<content type="html">{{ post.content | xml_escape }}</content>
