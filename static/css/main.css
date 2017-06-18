@@ -69,6 +69,7 @@ ul.posts span {
     background-image: url("https://source.unsplash.com/1600x900/daily");
     background-position: 0 50%;
     background-size: 100% auto;
+    background-size: cover;
     border-bottom: 1px solid #e1e8ed;
     border-radius: 4px 4px 0 0;
     height: 64px;
