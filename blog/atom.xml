@@ -6,20 +6,20 @@ permalink: /feed/
 <feed xmlns="http://www.w3.org/2005/Atom">
 
 	<title>RockiTech Blog</title>
-	<link href="atom.xml" rel="self"/>
+	<link href="/feed/" rel="self"/>
 	<link href="/blog"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>/blog</id>
+	<id>http://rockitech.net/blog</id>
 	<author>
 		<name>mobihack</name>
-		<email></email>
+		<email>mobihack.me@gmail.com</email>
 	</author>
 
 	{% for post in site.posts %}
 		<entry>
 			<title>{{ post.title }}</title>
 			<author>
-  				<name>John Doe</name>
+  				<name>{{ post.author }}</name>
 			</author>
 			<link href="http://rockitech.net{{ post.url | absolute }}"/>
 			<updated>{{ post.date | date_to_xmlschema }}</updated>
