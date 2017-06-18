@@ -24,10 +24,11 @@ The solution I use personally is to run multiple PHP Versions with Apache. We ca
 * And finally, Switch between them with ease.
 
 ## Get Started
-We will be installing Apache.
-We will be installing PHP versions: 5.6, 7.0, and 7.1.
-We will be installing PHP as CLI and as an Apache Module (You can skip CLI if you don't want to).
-We will be using Ubuntu 16.04 (Debian).
+
+* We will be installing Apache 2.4.
+* We will be installing PHP versions: 5.6, 7.0, and 7.1.
+* We will be installing PHP as CLI and as an Apache Module (You can skip CLI if you don't want to).
+* We will be using Ubuntu 16.04 (Debian).
 
 ## Installing Apache
 Installing Apache is relatively easy:
