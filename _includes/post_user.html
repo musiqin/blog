@@ -1,0 +1,20 @@
+{% assign userData = site.data.users | where: "id", page.author | first %}
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://github.com/{{ userData.github }}.png?size=96" alt="Image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{ userData.name }}</p>
+        <p class="subtitle is-6"><a href="https://github.com/{{ userData.github }}">@{{ page.author }}</a></p>
+      </div>
+    </div>
+
+    <div class="content">
+      {{ userData.bio }}
+    </div>
+  </div>
+</div>
