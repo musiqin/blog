@@ -46,82 +46,47 @@
           </div>
           
           <div class="spacer"></div>
-          Category: {% for tag in page.categories %}
+
+          <div class="columns">
+  <div class="column is-7">
+          {% include post_user.html %}
+</div> <!--/column-->
+<div class="column is-5">
+    <div class="card" style="height: 100%">
+<div class="card-content">
+Time: {% assign words = content | number_of_words %}
+  {% if words < 270 %}
+    1 minute
+  {% else %}
+    {{ words | divided_by:135 }} minutes
+  {% endif %} read
+  <br>
+      Category: {% for tag in page.categories %}
        <a class="tag" href="/blog/categories.html#{{ tag | slugify }}">{{ tag }}</a> 
      {% endfor %}
      <br>
 Tags: {% for tag in page.tags %}
        <a class="tag" href="/blog/tag.html#{{ tag | slugify }}">{{ tag }}</a>
      {% endfor %}
-          <div class="spacer"></div>
-
-          {% assign userData = site.data.users | where: "id", page.author | first %}
-
-          <div class="card is-fullwidth">
-            <header class="card-header">
-              <p class="card-header-title">
-                About the author
-              </p>
-              <a class="card-header-icon" href="#top">
-                <i class="fa fa-angle-up"></i>
-              </a>
-            </header>
-            <div class="card-content">
-              <article class="media">
-                <div class="media-left">
-                  <figure class="image is-64x64 image-is-round">
-                    <img src="https://github.com/{{ userData.github }}.png?size=128" alt="Image">
-                  </figure>
-                </div>
-                <div class="media-content">
-                  <div class="content">
-                    <p>
-                      <strong>{{ userData.name }}</strong> <a href="http://github.com/{{ userData.github }}"><small>@{{ page.author }}</small></a>
-                      <br>
-                      {{ userData.bio }}
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <footer class="card-footer">
-              <a class="card-footer-item" href="http://www.facebook.com/sharer.php?u={{ page.url | absolute_url }}">
-                <span class="icon is-small"><i class="fa fa-facebook"></i></span><span class="is-hidden-mobile"> Share on Facebook</span></a>
-                    <a class="card-footer-item" href="http://twitter.com/share?url={{ page.url | absolute_url }}&amp;text={{ page.title }}">
-                      <span class="icon is-small"><i class="fa fa-twitter"></i></span><span class="is-hidden-mobile"> Share on Twitter</span></a>
-                    <a class="card-footer-item" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={{ page.url | absolute_url }}">
-			<span class="icon is-small"><i class="fa fa-google-plus"></i></span> <span class="is-hidden-mobile"> Share on G+</span></a>
-            </footer>
-          </div>
-          <div class="spacer"></div>
-          {% if page.comments %}
-        <div id="disqus_thread"></div>
-        <script>
-
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://rockitech.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      {% endif %}
+     
+     </div>
+     <footer class="card-footer">
+    <a class="card-footer-item" href="http://www.facebook.com/sharer.php?u={{ post.url | absolute_url }}" target="_blank">
+              <span class="icon is-small"><i class="fa fa-facebook"></i></span></a>
+    <a class="card-footer-item" href="http://twitter.com/share?url={{ post.url | absolute_url }}&text={{ post.title }}" target="_blank">
+            <span class="icon is-small"><i class="fa fa-twitter"></i></span></a>
+    <a class="card-footer-item" href="https://plusone.google.com/_/+1/confirm?hl=en&url={{ post.url | absolute_url }}" target="_blank">    
+            <span class="icon is-small"><i class="fa fa-google-plus"></i></span></a>
+  </footer>
+</div>
+</div>
+</div>
+{% include related_posts.html %}          
+<div class="spacer"></div>
+{% include post_comments.html %}  
+      
         </div>
       </div>
-
-      {% for relpost in site.related_posts %}
-      {{ relpost }}
-      {% endfor %}
     </div>
   </section>
 {% include footer.html %}
