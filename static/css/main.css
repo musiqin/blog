@@ -188,3 +188,12 @@ img.image-is-round,figure.image-is-round img{
 pre.highlight code{
   white-space: pre-wrap;
 }
+article.media .media-content .content h3{
+  margin: 0px;
+}
+article.media .media-content .content h3 a{
+  font-size: 1rem;
+}
+article.media .media-content .content{
+  line-height: 1.25;
+}
