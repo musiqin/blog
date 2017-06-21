@@ -1,13 +1,19 @@
 ---
 title: feed
 permalink: /feed/
+layout: none
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
 
 	<title>RockiTech Blog</title>
-	<link href="{{ site.url }}/feed/" rel="self"/>
-	<link href="{{ site.url }}/"/>
+
+	<link href="{{ site.url }}/feed/" type="application/atom+xml" rel="self"/>
+	<link type="text/html" href="{{ site.url | uri_escape }}" rel="alternate"/>
+
+	<generator uri="http://jekyllrb.com/">Jekyll</generator>
+
+
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
 	<id>{{ site.url }}/</id>
 	<author>
@@ -15,17 +21,17 @@ permalink: /feed/
 		<email>mobihack.me@gmail.com</email>
 	</author>
 
-	{% for post in site.posts limit:20 %}
-	  <entry>
-		<title>{{ post.title }}</title>
+	{% for post in site.posts limit:10 %}
+	<entry>
+		<title type="html"><![CDATA[{{ post.title }}]]></title>
 		<author>
-				<name>{{ post.author | xml_escape }}</name>
+			<name>{{ post.author | xml_escape }}</name>
 		</author>
 		<link href="{{ site.url }}{{ post.url | absolute }}"/>
 		<updated>{{ post.date | date_to_xmlschema }}</updated>
 		<id>{{ site.url }}{{ post.id }}</id>
-		<content type="html">new</content>
-	  </entry>
+		<summary type="html"><![CDATA[{{ post.summary }}]]></summary>
+	</entry>
   	{% endfor %}
 
 </feed>
