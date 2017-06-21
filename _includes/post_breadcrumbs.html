@@ -1,0 +1,29 @@
+<ol vocab="http://schema.org/" typeof="BreadcrumbList">
+  <li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage"
+        href="{{ site.url }}">
+      <span property="name">Home</span>
+      </a>
+    <meta property="position" content="1">
+  </li>
+
+  <li property="itemListElement" typeof="ListItem">
+    {% for tag in page.categories %}
+     
+    <a property="item" typeof="WebPage"
+        href="{{ site.url }}/categories/#{{ tag | slugify }}">
+      <span property="name">{{ tag }}</span>
+      </a>
+
+      {% endfor %}
+    <meta property="position" content="2">
+  </li>
+
+  <li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage"
+        href="{{ page.url }}">
+      <span property="name">{{ page.title }}</span>
+      </a>
+    <meta property="position" content="3">
+  </li>
+</ol>

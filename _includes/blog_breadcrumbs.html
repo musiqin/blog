@@ -1,0 +1,17 @@
+<ol vocab="http://schema.org/" typeof="BreadcrumbList">
+  <li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage"
+        href="{{ site.url }}">
+      <span property="name">Home</span>
+      </a>
+    <meta property="position" content="1">
+  </li>
+
+  <li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage"
+        href="{{ page.url }}">
+      <span property="name">{{ page.title }}</span>
+      </a>
+    <meta property="position" content="2">
+  </li>
+</ol>

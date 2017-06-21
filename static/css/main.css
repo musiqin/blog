@@ -197,3 +197,41 @@ article.media .media-content .content h3 a{
 article.media .media-content .content{
   line-height: 1.25;
 }
+.breadcrumbs{
+   background-color: #1aebcc;
+   padding: 10px 20px;
+
+}
+.breadcrumbs ol{
+  list-style-type: none;
+  text-align: center;
+}
+.breadcrumbs li {
+     display: inline;
+}
+.breadcrumbs a{
+  color: white;
+
+  padding: 10px 6px;
+  border-radius: 3px;
+}
+.breadcrumbs a:hover{
+    background-color: #34ffe6;
+}
+.breadcrumbs li:last-child a{
+  color: #37474f; 
+}
+.breadcrumbs li:last-child a:hover{
+    background-color: #1aebcc;
+}
+.breadcrumbs li::before {
+    display: inline-block;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    color: #636c72;
+    content: "›";
+}
+.breadcrumbs li:first-child::before{
+  content: none;
+  padding: 0px;
+}

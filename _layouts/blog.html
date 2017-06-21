@@ -98,5 +98,7 @@
         </div>
       </div>
   </section>
-
+{% if page.noBreadcrumbs==blank %}
+<div class="breadcrumbs">{% include blog_breadcrumbs.html %}</div>
+{% endif %}
 {% include footer.html %}
