@@ -9,7 +9,7 @@
             </header>
             <div class="card-content">
               <a class="card-avatar">
-                <img src="/static/pics/shami.png" class="card-avatar-img">
+                <img src="/static/pics/shami.png" class="card-avatar-img" alt="Avatar Image">
               </a>
 
               <div class="card-user">
@@ -72,7 +72,7 @@
               <div class="column is-3 is-marginless">
                 <div class="image">
                 <figure class="image is-48x48">
-                  <img src="https://github.com/{{ member.github }}.png?size=48" style="border-radius: 50%">
+                  <img src="https://github.com/{{ member.github }}.png?size=48" style="border-radius: 50%" alt="{{ member.id }} - Avatar Image">
                 </figure>
                 </div>
               </div>
@@ -97,8 +97,6 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
-<ul>
 
 {% include footer.html %}
