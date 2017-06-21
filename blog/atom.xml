@@ -7,25 +7,25 @@ permalink: /feed/
 
 	<title>RockiTech Blog</title>
 	<link href="{{ site.url }}/feed/" rel="self"/>
-	<link href="/blog"/>
+	<link href="{{ site.url }}/"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>{{ site.url }}/blog</id>
+	<id>{{ site.url }}/</id>
 	<author>
 		<name>mobihack</name>
 		<email>mobihack.me@gmail.com</email>
 	</author>
 
 	{% for post in site.posts %}
-		<entry>
-			<title>{{ post.title }}</title>
-			<author>
-  				<name>{{ post.author }}</name>
-			</author>
-			<link href="{{ site.url }}{{ post.url | absolute }}"/>
-			<updated>{{ post.date | date_to_xmlschema }}</updated>
-			<id>http://rockitech.net{{ post.id }}</id>
-			<content type="html">{{ post.content | xml_escape }}</content>
-		</entry>
+	<entry>
+		<title>{{ post.title }}</title>
+		<author>
+				<name>{{ post.author }}</name>
+		</author>
+		<link href="{{ site.url }}{{ post.url | absolute }}"/>
+		<updated>{{ post.date | date_to_xmlschema }}</updated>
+		<id>{{ post.id }}</id>
+		<content type="html">{{ post.content | xml_escape }}</content>
+	</entry>
 	{% endfor %}
 
 </feed>
