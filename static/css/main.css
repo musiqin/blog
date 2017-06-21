@@ -2,11 +2,21 @@ html {
   position: relative;
   min-height: 100%;
 }
-
-body {
-  margin-bottom: 60px;
+@media screen and (max-width: 768px) {
+  nav#top.nav .nav-menu {
+      display: block;
+      transition: transform 0.75s, opacity 0.5s ease-out;
+      
+      opacity: 0;
+      
+      transform: scaleY(0);
+      transform-origin: 0 0;
+  }
+  nav#top.nav .nav-menu.is-active {
+      opacity: 1;
+      transform: scaleY(1);
+  }
 }
-
 .footer {
   position: absolute;
   bottom: 0;
@@ -77,14 +87,15 @@ ul.posts span {
 }
 
 .card-content {
-    padding: 0px;
+    padding: 1.5rem;
+    margin-top: -15px;
 }
 .card-avatar {
   background-color: #fff;
   border-radius: 6px;
   display: inline-block !important;
   float: left;
-  margin: -50px 5px 0 8px;
+  margin: -30px 5px 0 10px;
   max-width: 100%;
   padding: 1px;
   vertical-align: bottom;
@@ -96,9 +107,6 @@ ul.posts span {
   color: #fff;
   height: 72px;
   width: 72px;
-}
-.card-user {
-    margin: -20px 0 0;
 }
 .card-user-name{
     font-size: 18px;

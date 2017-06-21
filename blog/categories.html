@@ -1,23 +1,27 @@
 ---
 layout: blog
 title: Categories
-permalink: /categories.html
+permalink: /categories/
 ---
 <h2 class="title">
     Categories
 </h2>
 <hr>
     <div class="tags-expo">
-        <div class="tags-expo-list">
-            All Categories: 
-    {% for tag in site.categories %}
-            <a class="post-tag" href="#{{ tag[0] | slugify }}">
-                {{ tag[0] }}
-            </a>
+        <div class="tags-expo-list content">
+            <h2>All Categories:</h2>
+            <ul>
+            {% for tag in site.categories %}
+                <li>
+                    <a class="post-tag" href="#{{ tag[0] | slugify }}">
+                        {{ tag[0] }}
+                    </a>
+                </li>
             {% endfor %}
+            </ul>
         </div>
-        <br/>
-        <div class="tags-expo-section">
+        <hr>
+        <div class="tags-expo-section content">
             {% for tag in site.categories %}
             <h2 id="{{ tag[0] | slugify }}">
                 {{ tag[0] }}

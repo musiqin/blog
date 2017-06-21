@@ -33,11 +33,11 @@
             {% assign tags_list = site.categories %}  
               {% if tags_list.first[0] == null %}
                 {% for tag in tags_list %} 
-                  <p class="trend-hashtag"><a href="/blog/categories.html#{{ tag | slugify }}">#{{ tag | capitalize }}</a><br>{{ site.tags[tag].size }} posts</p>
+                  <p class="trend-hashtag"><a href="/categories/#{{ tag | slugify }}">#{{ tag | capitalize }}</a><br>{{ site.tags[tag].size }} posts</p>
                 {% endfor %}
               {% else %}
                 {% for tag in tags_list %} 
-                <p class="trend-hashtag"><a href="/blog/categories.html#{{ tag[0] | slugify }}">#{{ tag[0] | capitalize }}</a><br>{{ tag[1].size }} posts</p>
+                <p class="trend-hashtag"><a href="/categories/#{{ tag[0] | slugify }}">#{{ tag[0] | capitalize }}</a><br>{{ tag[1].size }} posts</p>
                 {% endfor %}
               {% endif %}
             {% assign tags_list = nil %}
@@ -53,6 +53,9 @@
             {{ content }}
 
           </div>
+          {% if page.pagination %}
+            {% include blog_paginate.html %}
+          {% endif %}
         </div>
         <div class="column is-3">
           <div class="box">
@@ -65,7 +68,7 @@
             <p><span class="title is-5">Who to follow</span></p>
             <hr>
             {% for member in site.data.users %}
-            <div class="columns">
+            <div class="columns is-mobile">
               <div class="column is-3 is-marginless">
                 <div class="image">
                 <figure class="image is-48x48">

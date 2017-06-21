@@ -3,10 +3,15 @@ markdown:    kramdown
 highlighter: pygments
 kramdown:  
   parse_block_html: true
-permalink: /blog/:title.html
-paginate: 8
-paginate_path: "/blog/page:num/"
+
+permalink: /p/:categories/:title.html
+
+paginate: 6
+paginate_path: "/page-:num/"
+
 gems:
+  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jemoji
 related_posts_max: 4

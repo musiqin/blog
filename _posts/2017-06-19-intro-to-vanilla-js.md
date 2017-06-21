@@ -125,6 +125,6 @@ request = null;
 
 Vanilla JS is a running joke amongst programmers who use it to remind other developers that many things can be done nowadays without the need for additional JavaScript libraries. Everyone should use pure JS rather than relying on Jquery for small things. Pure JS also has high performance. If you are interested, you can visit these sites for more information and alternative codes:
 
-[Vanilla-JS.Com](http://vanilla-js.com/)
+* [Vanilla-JS.Com](http://vanilla-js.com/)
 
-[YouMightNotNeedJquery.Com](http://youmightnotneedjquery.com/)
+* [YouMightNotNeedJquery.Com](http://youmightnotneedjquery.com/)
