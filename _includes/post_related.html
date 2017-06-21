@@ -25,30 +25,40 @@
     {% endfor %}
 
     {% if sameTagCount >= minCommonTags %}
-      <article class="media">
+    <article class="media">
               <div class="media-left">
                 <figure class="image is-64x64">
-                  
-                  <canvas width="64" height="64" class="identicons" data-jdenticon-url="hashCode('blog-intro-to-vanilla-js-html')" data-jdenticon-hash="5552600035423"></canvas>
-                  
+                  {% if post.image %}
+                  <img src="{{ post.image[0].url }}" alt="{{ post.image[0].alt }}" title="{{ post.image[0].title }}" />
+
+                  {% else %}
+                  <canvas width="64" height="64" class="identicons" data-jdenticon-url="hashCode('{{ post.url |slugify }}')"></canvas>
+                  {% endif %}
                 </figure>
               </div>
               <div class="media-content">
                 <div class="content">
-                  <p>
-                    <strong>@{{ post.author }}</strong> <small style="float:right;">19 Jun 2017</small>
+                    <strong>@{{ post.author }}</strong> <small style="float:right;">{{ post.date | date_to_string }}</small>
                     <br>
-                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                  </p>
+                    <h3><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
                 </div>
-                <nav class="level">
-                 <div class="level right">
-                   {{ commonTags }}
+                <nav class="level is-mobile">
+                  <div class="level-left">
+                  {% assign shareUrl=post.url | absolute_url | uri_escape %}
+                    <a class="level-item" href="http://www.facebook.com/sharer.php?u={{ shareUrl }}" target="_blank">
+              <span class="icon is-small"><i class="fa fa-facebook"></i></span></a>
+                    <a class="level-item" href="http://twitter.com/share?url={{ shareUrl }}&text={{ post.title | uri_escape }}" target="_blank">
+            <span class="icon is-small"><i class="fa fa-twitter"></i></span></a>
+                  <a class="level-item" href="https://plusone.google.com/_/+1/confirm?hl=en&url={{ shareUrl }}" target="_blank">    
+            <span class="icon is-small"><i class="fa fa-google-plus"></i></span></a>
                  </div>
+                 <div class="level right">{{ commonTags }}</div>
                 </nav>
 
               </div>
             </article>
+
+
       {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
       {% if maxRelatedCounter >= maxRelated %}
         {% break %}
@@ -57,11 +67,11 @@
 
   {% endfor %}
   {% if maxRelatedCounter < 1 %}
-    <article class="message is-danger">
-  <div class="message-body">
-   <span class="icon"><i class="fa fa-warning"></i></span> We couldn't find a related post for this post.
-  </div>
-</article>
+    <div class="message is-danger">
+      <div class="message-body">
+       <span class="icon"><i class="fa fa-warning"></i></span> We couldn't find a related post for this post.
+      </div>
+    </div>
   {% endif %}
 
 </div>
