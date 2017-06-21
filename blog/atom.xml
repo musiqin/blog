@@ -15,17 +15,17 @@ permalink: /feed/
 		<email>mobihack.me@gmail.com</email>
 	</author>
 
-	{% for post in site.posts %}
-	<entry>
+	{% for post in site.posts limit:20 %}
+	  <entry>
 		<title>{{ post.title }}</title>
 		<author>
 				<name>{{ post.author }}</name>
 		</author>
 		<link href="{{ site.url }}{{ post.url | absolute }}"/>
 		<updated>{{ post.date | date_to_xmlschema }}</updated>
-		<id>{{ post.id }}</id>
+		<id>{{ site.url }}{{ post.id }}</id>
 		<content type="html">{{ post.content | xml_escape }}</content>
-	</entry>
-	{% endfor %}
+	  </entry>
+  	{% endfor %}
 
 </feed>
