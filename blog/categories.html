@@ -7,38 +7,37 @@ permalink: /categories/
     Categories
 </h2>
 <hr>
-    <div class="tags-expo">
-        <div class="tags-expo-list content">
-            <h2>All Categories:</h2>
-            <ul>
-            {% for tag in site.categories %}
-                <li>
-                    <a class="post-tag" href="#{{ tag[0] | slugify }}">
-                        {{ tag[0] }}
-                    </a>
-                </li>
-            {% endfor %}
-            </ul>
-        </div>
-        <hr>
-        <div class="tags-expo-section content">
-            {% for tag in site.categories %}
-            <h2 id="{{ tag[0] | slugify }}">
-                {{ tag[0] }}
-            </h2>
-            <ul class="tags-expo-posts">
-                {% for post in tag[1] %}
-                <li>
-                    <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                        {{ post.title }}
-                    </a> - 
-                    <small class="post-date">
-                        {{ post.date | date_to_string }}
-                    </small>
-                </li>
-                {% endfor %}
-            </ul>
-            {% endfor %}
-        </div>
+<div class="tags-expo">
+    <div class="tags-expo-list content">
+        <h2>All Categories:</h2>
+        <ul>
+        {% for tag in site.categories %}
+            <li>
+                <a class="post-tag" href="#{{ tag[0] | slugify }}">
+                    {{ tag[0] }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
     </div>
-</hr>
+    <hr>
+    <div class="tags-expo-section content">
+        {% for tag in site.categories %}
+        <h2 id="{{ tag[0] | slugify }}">
+            {{ tag[0] }}
+        </h2>
+        <ul class="tags-expo-posts">
+            {% for post in tag[1] %}
+            <li>
+                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                </a> - 
+                <small class="post-date">
+                    {{ post.date | date_to_string }}
+                </small>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+</div>
