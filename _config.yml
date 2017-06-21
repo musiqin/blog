@@ -15,4 +15,6 @@ gems:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jemoji
+  - jekyll-admin
+
 related_posts_max: 4
