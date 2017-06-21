@@ -30,7 +30,7 @@ layout: none
 		<link href="{{ site.url }}{{ post.url | absolute }}"/>
 		<updated>{{ post.date | date_to_xmlschema }}</updated>
 		<id>{{ site.url }}{{ post.id }}</id>
-		<summary type="html"><![CDATA[{{ post.content }}]]></summary>
+		<content type="html">{{ post.excerpt | xml_escape }}</content>
 	</entry>
   	{% endfor %}
 
