@@ -35,7 +35,7 @@ pagination: true
             <span class="icon is-small"><i class="fa fa-google-plus"></i></span></a>
                  </div>
                  <div class="level right">{% for tag in post.categories %}
-       <a class="tag" href="/blog/categories.html#{{ tag | slugify }}">{{ tag }}</a> 
+       <a class="tag" href="/categories/#{{ tag | slugify }}">{{ tag }}</a> 
      {% endfor %}</div>
                 </nav>
 
