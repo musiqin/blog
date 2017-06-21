@@ -1,3 +1,4 @@
+{% if paginator.total_pages > 1 %}
 <nav class="box pagination">
   {% if paginator.previous_page %}
     <a rel="prev" class="pagination-previous" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Previous</a>
@@ -22,3 +23,4 @@
     
   </ul>
 </nav>
+{% endif %}
