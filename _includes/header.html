@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 	<html lang="en">
 		<head>
-			<meta charset="utf-8">
+			
 			<title>{{ page.title }}</title>
+
+			<!-- Meta Tags -->
+			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
 			<!-- Google Verfication Code -->
@@ -14,6 +17,9 @@
 
 			<!-- Custom Css -->
 			<link rel="stylesheet" href="/static/css/main.css">
+
+			<!-- RSS+Atom Feed -->
+			<link rel="alternate" type="application/atom+xml" title="News Feed" href="{{ site.url }}/feed/" />
 			
 			{% seo %}
 		</head>
@@ -31,7 +37,7 @@
 			        <span></span>
       			</span>
 				<div class="nav-right nav-menu">
-				
+
 					<a class="nav-item is-tab" href="/archive/">archive</a>
 					<a class="nav-item is-tab" href="/categories/">categories</a>
 					<a class="nav-item is-tab" href="/feed/">feeds</a>
