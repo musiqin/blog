@@ -1,11 +1,29 @@
 name: RockiTech Blog
 
+description: "A blog dedicated to articles related to things like web development, design, server management..."
+url: "https://rockitech.net"
+enforce_ssl: "rockitech.net"
+
+logo: /static/pics/logo.png
+
+
+webmaster_verifications:
+  google: "_mjuCILje1KbiyITzjH9RaUctxe8KvIRyJyMgY8M62M"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /static/img/logo-card.png
+
 markdown:    kramdown
 highlighter: pygments
 kramdown:  
   parse_block_html: true
 
 permalink: /p/:categories/:title.html
+
+related_posts_max: 4
 
 paginate: 6
 paginate_path: "/page-:num/"
@@ -16,11 +34,3 @@ gems:
   - jekyll-sitemap
   - jemoji
   - jekyll-admin
-
-related_posts_max: 4
-
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /static/img/logo-card.png
