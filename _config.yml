@@ -10,11 +10,16 @@ logo: /static/pics/logo.png
 webmaster_verifications:
   google: "_mjuCILje1KbiyITzjH9RaUctxe8KvIRyJyMgY8M62M"
 
+facebook:
+  app_id: 1830897697239746
+ 
 defaults:
   - scope:
       path: ""
     values:
       image: /static/img/logo-card.png
+      height: 500
+      width: 500
 
 markdown:    kramdown
 highlighter: pygments

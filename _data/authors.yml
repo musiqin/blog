@@ -1,25 +1,27 @@
+#Make id first field.
+
 thecodefreak:
-    name: Amal
     id: thecodefreak
+    name: Amal
     github: thecodefreak
     bio: Write bio amal
 
 rajat:
-    name: Rajat
     id: rajat
+    name: Rajat
     github: feat7
     bio: Write bio rajat
 
 mobihack:
-    name: Shameem
     id: mobihack
+    name: Shameem
     github: mobihack
     twitter: mobihack
     picture: /static/img/mobihack.png
     bio: mobihack is an experienced PHP Developer with skills in front-end development. In his leisure time, he likes to listen to EDM Music, read books, or learn something new in programming!
 
 feat7:    
-    name: Vinay
     id: feat7
+    name: Vinay
     github: feat7
     bio: Write bio vinay
