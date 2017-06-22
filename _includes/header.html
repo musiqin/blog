@@ -6,6 +6,10 @@
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 			
+			<!-- Favicon -->
+			<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+			<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
 			<!-- Vendor CSS-->
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,7 +39,14 @@
       			</span>
       			
 				<div class="nav-right nav-menu">
-					<form action="/search/" method="GET">
+
+					<a class="nav-item is-tab" href="/archive/">archive</a>
+					<a class="nav-item is-tab" href="/categories/">categories</a>
+					<a class="nav-item is-tab" href="/feed/">feeds</a>
+					<a class="nav-item is-tab" href="/tags/">tags</a>
+					
+					
+				<form action="/search/" method="GET">
 					<div class="field has-addons nav-item">
 					  <p class="control is-expanded-mobile">
 					    <input class="input" type="text" name="search" placeholder="find a post!">
@@ -47,16 +58,6 @@
 					  </p>
 					</div>
 					</form>
-					<a class="nav-item is-tab" href="/archive/">archive</a>
-					<a class="nav-item is-tab" href="/categories/">categories</a>
-					<a class="nav-item is-tab" href="/feed/">feeds</a>
-					<a class="nav-item is-tab" href="/tags/">tags</a>
-					
-					<!--<span class="nav-item">
-						    <a class="button is-primary" href="http://github.com/mobihack">
-						    	<span>gihub</span>
-						    </a>
-				      	</span>-->
 				</div>
 			</div>
 		</nav>

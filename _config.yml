@@ -4,7 +4,7 @@ description: "A blog dedicated to articles related to things like web developmen
 url: "https://rockitech.net"
 enforce_ssl: "rockitech.net"
 
-logo: /static/pics/logo.png
+logo: /static/img/logo.png
 
 
 webmaster_verifications:
