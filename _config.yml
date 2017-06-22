@@ -7,8 +7,7 @@ enforce_ssl: "rockitech.net"
 logo: /static/img/logo.png
 
 
-webmaster_verifications:
-  google: "_mjuCILje1KbiyITzjH9RaUctxe8KvIRyJyMgY8M62M"
+google_verify: "mjuCILje1KbiyITzjH9RaUctxe8KvIRyJyMgY8M62M"
 
 facebook:
   app_id: 1830897697239746
