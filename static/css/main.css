@@ -16,6 +16,11 @@ html {
       opacity: 1;
       transform: scaleY(1);
   }
+  .is-expanded-mobile{
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
 }
 .footer {
   position: absolute;

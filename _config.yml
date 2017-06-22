@@ -1,4 +1,4 @@
-name: RockiTech
+name: RockiTech Blog
 
 markdown:    kramdown
 highlighter: pygments
@@ -18,3 +18,9 @@ gems:
   - jekyll-admin
 
 related_posts_max: 4
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /static/img/logo-card.png

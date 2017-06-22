@@ -1,19 +1,25 @@
--   name: Amal
+thecodefreak:
+    name: Amal
     id: thecodefreak
     github: thecodefreak
     bio: Write bio amal
 
--   name: Rajat
+rajat:
+    name: Rajat
     id: rajat
     github: feat7
     bio: Write bio rajat
 
--   name: Shameem
+mobihack:
+    name: Shameem
     id: mobihack
     github: mobihack
+    twitter: mobihack
+    picture: /static/img/mobihack.png
     bio: mobihack is an experienced PHP Developer with skills in front-end development. In his leisure time, he likes to listen to EDM Music, read books, or learn something new in programming!
-    
--   name: Vinay
+
+feat7:    
+    name: Vinay
     id: feat7
     github: feat7
     bio: Write bio vinay

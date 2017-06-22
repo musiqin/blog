@@ -1,4 +1,4 @@
-{% assign userData = site.data.users | where: "id", page.author | first %}
+{% assign userData = site.data.authors[page.author] %}
 <div class="card">
   <div class="card-content">
     <div class="media">
