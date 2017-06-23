@@ -5,10 +5,10 @@
     <div class="columns" style="align-items: center;justify-content: center;">
     <div class="column is-2">
       <figure class="image is-128x128">
-                  {% unless post.image == site.defaults[0].values.image %}
+                  {% unless page.image.path == site.defaults[0].values.image.path %}
                   <img src="{{ page.image.path }}" title="{{ page.title }}" alt="{{ page.title }}" />
                   {% else %}
-                  <canvas width="64" height="64" class="identicons" data-jdenticon-url="hashCode('{{ post.url |slugify }}')"></canvas>
+                  <canvas width="128" height="128" class="identicons" data-jdenticon-url="hashCode('{{ page.url |slugify }}')"></canvas>
                   {% endunless %}
                 </figure>
   </div>

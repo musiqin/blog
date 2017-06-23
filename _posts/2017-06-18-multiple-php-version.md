@@ -6,6 +6,10 @@ author: "mobihack"
 category: Server Management
 tags: [linux,bash,apache2,php]
 comments: true
+image:
+  path: /static/article-pics/multiple-php-version.png
+  height: 800
+  width: 800
 ---
 
 
