@@ -18,8 +18,8 @@ defaults:
     values:
       image:
         path: "/static/img/logo-card.png"
-        height: 500
-        width: 500
+        height: 800
+        width: 800
 
 markdown:    kramdown
 highlighter: pygments
