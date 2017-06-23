@@ -2,6 +2,10 @@ html {
   position: relative;
   min-height: 100%;
 }
+footer .footer-heart-color{
+  color: #f44336;
+}
+
 .columns.column-centered{
   align-items: center;justify-content: center;
 }
@@ -25,22 +29,7 @@ html {
     flex-grow: 1;
   }
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  color: #bbbbbb;
-}
 
-.footer p {
-  float: right;
-  margin: 0;
-  margin-top: 30px;
-}
-.footer .footer-heart-color{
-  color: #f44336;
-}
 h1.brand-name a {
   /*color: #00631A;*/
   color: #000000;
