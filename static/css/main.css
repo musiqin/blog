@@ -2,6 +2,9 @@ html {
   position: relative;
   min-height: 100%;
 }
+.columns.column-centered{
+  align-items: center;justify-content: center;
+}
 @media screen and (max-width: 768px) {
   nav#top.nav .nav-menu {
       display: block;
@@ -35,7 +38,9 @@ html {
   margin: 0;
   margin-top: 30px;
 }
-
+.footer .footer-heart-color{
+  color: #f44336;
+}
 h1.brand-name a {
   /*color: #00631A;*/
   color: #000000;
@@ -176,6 +181,12 @@ img.image-is-round,figure.image-is-round img{
 .splash-header-main{
   height: auto;
     color: white; background-color: rgb(0, 209, 178);
+}
+.splash-header-main .title{
+  color: white;
+}
+.splash-header-main .subtitle{
+  color: whitesmoke;
 }
 .glass-overlay{
     background-color: rgba(0, 0, 0, 0.5); padding: 3em;
