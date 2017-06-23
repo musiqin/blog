@@ -2,11 +2,11 @@
 <section class="hero is-default is-small post-banner splash-header splash-header-main" style="">
   <div class="hero-body" id="title-box">
     <div class="container glass-overlay">
-    <div class="columns">
+    <div class="columns" style="align-items: center;justify-content: center;">
     <div class="column is-2">
-      <figure class="image is-64x64">
+      <figure class="image is-128x128">
                   {% unless post.image == site.defaults[0].values.image %}
-                  <img src="{{ post.image }}" />
+                  <img src="{{ page.image.path }}" title="{{ page.title }}" alt="{{ page.title }}" />
                   {% else %}
                   <canvas width="64" height="64" class="identicons" data-jdenticon-url="hashCode('{{ post.url |slugify }}')"></canvas>
                   {% endunless %}

@@ -12,7 +12,7 @@ noBreadcrumbs: true
               <div class="media-left">
                 <figure class="image is-64x64">
                   {% unless post.image == site.defaults[0].values.image %}
-                  <img src="{{ post.image }}" />
+                  <img src="{{ post.image.path }}" />
                   {% else %}
                   <canvas width="64" height="64" class="identicons" data-jdenticon-url="hashCode('{{ post.url |slugify }}')"></canvas>
                   {% endunless %}
