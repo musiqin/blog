@@ -27,10 +27,10 @@ var qs=function(r){if(""==r)return{};for(var e={},n=0;n<r.length;++n){var t=r[n]
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
     dataSource: '{{ site.baseurl }}/search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}<\/a><\/li>',
+    searchResultTemplate: '<li><a href="{url}">{title}<\/a><\/li>',
     noResultsText: 'No results found!',
     limit: 10,
     fuzzy: true,
   });
-window.onload=function(){if(null!=qs.search){var e=document.getElementById("search-input");e.value=qs.search,e.dispatchEvent(new KeyboardEvent("keyup"))}};
+window.onload=function(){if(null!=qs.q){var e=document.getElementById("search-input");e.value=qs.q,e.dispatchEvent(new KeyboardEvent("keyup"))}};
 </script>

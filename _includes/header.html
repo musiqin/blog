@@ -22,6 +22,20 @@
 		<!-- RSS+Atom Feed -->
 		<link rel="alternate" type="application/atom+xml" title="News Feed" href="{{ site.url }}/feed/" />
 		
+		<!-- Sitelinks Searchbox -->
+		<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "WebSite",
+		  "url": "https://rockitech.net/",
+		  "potentialAction": {
+		    "@type": "SearchAction",
+		    "target": "https://query.example.com/search?q={search_term_string}",
+		    "query-input": "required name=search_term_string"
+		  }
+		}
+		</script>
+
 		{% seo %}
 
 		{% if site.google_verify %}
@@ -53,11 +67,16 @@
 			<form action="/search/" method="GET">
 				<div class="field has-addons nav-item">
 				  <p class="control is-expanded-mobile">
-				    <input class="input" type="text" name="search" placeholder="find a post!">
+				    <input class="input" type="text" name="q" placeholder="search posts!">
 				  </p>
 				  <p class="control">
 				    <button class="button is-info" type="submit">
-				      Search
+				       <span class="icon">
+					       <i class="fa fa-search"></i>
+					    </span>
+					    <span>
+					    	Search
+					    </span>
 				    </button>
 				  </p>
 				</div>
