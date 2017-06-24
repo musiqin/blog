@@ -301,15 +301,20 @@ ul#my_toc li{
   padding-top: 12px;
 }
 ul#my_toc li a{
-  color: grey
+  color: grey;
+
+  transition:all 0.3s ease-in-out;
+   -webkit-transition:all 0.3s ease-in-out;
+   -moz-transition:all 0.3s ease-in-out;
+   -o-transition:all 0.3s ease-in-out;
 }
 ul#my_toc li a.active{
   color: #00d1b2;
 
 }
 ul#my_toc li ul{
-  margin-left: 5px;
-  font-size: 0.8em;
+  margin-left: 10px;
+  font-size: 0.7em;
 }
 #fixed-toc{
   position: absolute;
