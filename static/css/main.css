@@ -286,7 +286,7 @@ pre.highlight code {
 .breadcrumbs ol li::before {
     display: inline-block;
     color: #636c72;
-    content: "›";
+    content: "&rsaquo;";
     padding-left: 1px;
     padding-right: 1px;
 }
