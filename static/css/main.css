@@ -211,7 +211,7 @@ article.media .media-content .content {
     background-size: 100% auto;
     background-size: cover;
     border-bottom: 1px solid #e1e8ed;
-    border-radius: 4px 4px 0 0;
+    border-radius: 0px;
     height: 64px;
     width: 100%;
 }
@@ -267,7 +267,7 @@ pre.highlight code {
 
 .breadcrumbs ol li a {
     color: white;
-    padding: 10px 0px;
+    padding: 10px 4px;
     border-radius: 3px;
 }
 
@@ -285,13 +285,51 @@ pre.highlight code {
 
 .breadcrumbs ol li::before {
     display: inline-block;
-    padding-right: .5em;
-    padding-left: .5em;
     color: #636c72;
     content: "›";
+    padding-left: 1px;
+    padding-right: 1px;
 }
 
 .breadcrumbs ol li:first-child::before {
     content: none;
     padding: 0px;
+}
+
+/** TOC  */
+ul#my_toc li{
+  padding-top: 12px;
+}
+ul#my_toc li a{
+  color: grey
+}
+ul#my_toc li a.active{
+  color: #00d1b2;
+
+}
+ul#my_toc li ul{
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+#fixed-toc{
+  position: absolute;
+  float:left;
+  width: 150px;
+  margin:60px 0;
+}
+#fixed-toc.is-sticky{
+  position: fixed;
+  top:0; 
+}
+#fixed-toc.is-sticky-end{
+  position: fixed;
+  
+}
+@media screen and (max-width: 1100px) {
+  #fixed-toc{
+    display: none;
+  }
+}
+#mark-as-complete.button{
+  margin-top: 16px;
 }
