@@ -2,8 +2,8 @@
 <section class="hero is-default is-small post-banner splash-header splash-header-main" style="">
   <div class="hero-body" id="title-box">
     <div class="container glass-overlay">
-    <div class="columns column-centered">
-    <div class="column is-2">
+    <div class="columns column-centered post-header">
+    <div class="column is-narrow post-image">
       <figure class="image is-128x128">
                   {% unless page.image.path == site.defaults[0].values.image.path %}
                   <img src="{{ page.image.path }}" title="{{ page.title }}" alt="{{ page.title }}" />
@@ -19,9 +19,9 @@
         {{ page.title }}
       </h1>
 
-      <h2 class="subtitle">
+      <span class="author">
         by @{{ page.author }}
-      </h2>
+      </span>
   
 </div>
   </div>  
@@ -33,14 +33,21 @@
   <div class="spacer"></div>
   <div class="spacer"></div>
 
+
   <section class="section blog">
     <div class="container">
       <div class="columns">
-        <div class="column is-8 is-offset-2">
+        <div class="column is-2">
+          {% if page.toc %}
+          <div class="title">Contents</div>
+            {% include post_toc.html html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
+          {% endif %}
+          </div>
+        <div class="column is-8">
           <div class="content blog-post">
             <p class="has-text-right has-text-muted">{{ page.date | date_to_string }}</p>
             
-            {{ page.content | markdownify  }}
+            {{ content | inject_anchors }}
             
           </div>
           

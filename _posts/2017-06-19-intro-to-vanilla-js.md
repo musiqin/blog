@@ -7,9 +7,10 @@ category: Javascript
 tags: [js,javascript,vanilla js,pure js,intro]
 comments: true
 image:
-  path: /static/article-pics/intro-to-vanilla-js.png
+  path: /static/article-pics/intro-to-vanilla-js-min.png
   height: 800
   width: 800
+toc: true
 ---
 
 
