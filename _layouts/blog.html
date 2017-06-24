@@ -51,6 +51,7 @@
           <div class="box">
               
             {{ content }}
+            <div class="spacer"></div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Responsive Ad -->
 <ins class="adsbygoogle"
@@ -76,27 +77,27 @@
           <div class="box">
             <p><span class="title is-5">Who to follow</span></p>
             <hr>
-            {% for member in site.data.users %}
+            {% for member in site.data.authors %}
             <div class="columns is-mobile">
               <div class="column is-3 is-marginless">
                 <div class="image">
                 <figure class="image is-48x48">
-                  <img src="https://github.com/{{ member.github }}.png?size=48" style="border-radius: 50%" alt="{{ member.id }} - Avatar Image">
+                  <img src="https://github.com/{{ member[1].github }}.png?size=48" style="border-radius: 50%" alt="{{ member[1].id }} - Avatar Image">
                 </figure>
                 </div>
               </div>
               <div class="column is-9">
                 <p>
                   <a href="#">
-                    <strong>{{ member.name }}</strong>
-                    <small>&commat;{{ member.id }}</small>
+                    <strong>{{ member[1].name }}</strong>
+                    <small>&commat;{{ member[1].id }}</small>
                   </a>
                 </p>
-                <a class="button is-primary is-small" href="http://github.com/{{ member.github }}">
-                    <span class="icon">
-      <i class="fa fa-github"></i>
-    </span>
-    <span>follow</span>
+                <a class="button is-primary is-small" href="http://github.com/{{ member[1].github }}">
+                  <span class="icon">
+                    <i class="fa fa-github"></i>
+                  </span>
+                  <span>follow</span>
                 </a>
               </div>
             </div>
