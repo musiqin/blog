@@ -52,26 +52,26 @@ We will be using PPA from *[ondrej](https://launchpad.net/~ondrej/)*. His reposi
 
 Add PPA:
 
-```
+```console
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 ```
 
 Install PHP 5.6
 
-```
+```console
 sudo apt-get install -y php5.6 libapache2-mod-php5.6 php5.6-cli php5.6-common php5.6-mbstring php5.6-gd php5.6-intl php5.6-xml php5.6-mysql php5.6-mcrypt php5.6-zip
 ```
 
 Install PHP 7.0
 
-```
+```console
 sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0-cli php7.0-common php7.0-mbstring php7.0-gd php7.0-intl php7.0-xml php7.0-mysql php7.0-mcrypt php7.0-zip
 ```
 
 Install PHP 7.1
 
-```
+```console
 sudo apt-get install -y php7.1 libapache2-mod-php7.1 php7.1-cli php7.1-common php7.1-mbstring php7.1-gd php7.1-intl php7.1-xml php7.1-mysql php7.1-mcrypt php7.1-zip
 ```
 
@@ -96,7 +96,7 @@ You can also create a PHP file in your document root with `phpinfo()` function.
 
 You can easily change the modapache version by using this:
 
-```
+```console
 sudo a2dismod php5.6
 sudo a2dismod php7.0
 sudo a2enmod php7.1

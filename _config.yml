@@ -19,7 +19,7 @@ defaults:
         width: 800
 
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 kramdown:  
   parse_block_html: true
   # Enable GitHub Flavored Markdown (fenced code blocks)

@@ -42,7 +42,7 @@ Of course, I'll list some of the alternatives for widely used jquery codes.
 
 Jquery:
 
-```
+```js
 $(selector).each(function(i, el){
 
 });
@@ -50,7 +50,7 @@ $(selector).each(function(i, el){
 
 Vanilla JS:
 
-```
+```js
 function forEachElement(selector, fn) {
   var elements = document.querySelectorAll(selector);
   for (var i = 0; i < elements.length; i++)
@@ -66,13 +66,13 @@ forEachElement(selector, function(el, i){
 
 Jquery:
 
-```
+```js
 $(el).toggleClass(className);
 ```
 
 Vanilla JS:
 
-```
+```js
 if (el.classList) {
   el.classList.toggle(className);
 } else {
@@ -96,7 +96,7 @@ if (el.classList) {
 
 Jquery:
 
-```
+```js
 $.getJSON('/my/url', function(data) {
 
 });
@@ -104,8 +104,8 @@ $.getJSON('/my/url', function(data) {
 
 Vanilla JS:
 
-```
-#IE8+
+```js
+//IE8+
 
 var request = new XMLHttpRequest();
 request.open('GET', '/my/url', true);
