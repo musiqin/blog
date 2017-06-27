@@ -48,11 +48,12 @@ function commentsGenerate(data) {
   <div class="message-body">\
     <span class="icon"><i class="fa fa-info"></i></span>No comments where found for this post. Be the first!\
   </div>\
-</div>';
+</div>\
+<br>';
     } else {
       el.innerHTML = "";
         data.forEach(function(entry) {
-            console.log(entry);
+            //console.log(entry);
             // Make a new div
             var elChild = document.createElement('div');
             // Give the new div some content
