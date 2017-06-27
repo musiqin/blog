@@ -39,5 +39,7 @@ gems:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jemoji
-  - jekyll-admin
+#  - jekyll-admin
   - jekyll-toc
+
+commentsPath: "http://comments.dev/comments/add"

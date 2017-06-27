@@ -33,16 +33,16 @@
 
  function outerHeight(elem) {
      var curStyle = elem.currentStyle || window.getComputedStyle(elem);
-     outerHeight = elem.offsetHeight;
-     outerHeight += parseInt(curStyle.marginTop);
-     outerHeight += parseInt(curStyle.marginBottom);
-     return outerHeight //If you'd like to return the outerheight
+     ht = elem.offsetHeight;
+     ht += parseInt(curStyle.marginTop);
+     ht += parseInt(curStyle.marginBottom);
+     return ht; //If you'd like to return the outerheight
  }
  (function() {
      'use strict';
      var left = document.getElementById("fixed-toc"),
          content = document.getElementById("post-content"),
-         start = left.offsetTop + 380,
+         start = left.offsetTop + left.offsetHeight,
          stop = content.offsetTop + outerHeight(content),
          docBody = document.documentElement || document.body.parentNode || document.body,
          hasOffset = window.pageYOffset !== undefined,
@@ -52,15 +52,15 @@
      var sections = {};
      var i = 0;
      Array.prototype.forEach.call(section, function(e) {
-         sections[e.id] = e.offsetTop + (2 * viewportHeight / 3);
+         sections[e.id] = e.offsetTop + (5 * viewportHeight / 8);
      });
-     //console.log(stop);
+     console.log(start,stop);
      window.onscroll = function(e) {
          var scrollPosition = hasOffset ? window.pageYOffset : docBody.scrollTop;
          if (scrollPosition >= start && scrollPosition <= stop) {
              // stick the div        
              left.className = 'is-sticky';
-             left.style["top"] = '0px';
+             left.removeAttribute("style");
          } else {
              if (scrollPosition >= stop) {
                  //console.log('stickypos: '+ scrollPosition);
@@ -70,6 +70,7 @@
                  (document.querySelector('#my_toc .active') != null) ? document.querySelector('#my_toc .active').setAttribute('class', ' '): null;
                  // release the div
                  left.className = '';
+                 left.removeAttribute("style");
              }
          }
          for (i in sections) {
@@ -101,7 +102,8 @@
              links = document.getElementsByTagName('a'),
              href;
          for (var i = 0; i < links.length; i++) {
-             href = (links[i].attributes.href === undefined) ? null : links[i].attributes.href.nodeValue.toString();
+
+             href = (links[i].attributes.href === undefined) ? null : links[i].getAttribute("href");
              if (href !== null && href.length > 1 && href.indexOf('#') != -1) // href.substr(0, 1) == '#'
              {
                  links[i].onclick = function() {

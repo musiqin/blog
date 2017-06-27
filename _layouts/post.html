@@ -1,4 +1,5 @@
 {% include header.html %}
+
 <section class="hero is-default is-small post-banner splash-header splash-header-main" style="">
   <div class="hero-body" id="title-box">
     <div class="container glass-overlay">
@@ -94,6 +95,9 @@ Tags: {% for tag in page.tags %}
 </div>
 </div>
 </div>
+{% if page.series %}
+{% include post_series.html %}
+ {% endif %}
 {% include post_related.html %}          
 <div class="spacer"></div>
 {% include post_comments.html %}  

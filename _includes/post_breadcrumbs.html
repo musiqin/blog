@@ -1,24 +1,16 @@
 <ol>
   <li>
-    <a href="{{ site.url }}">
-      <span>Home</span>
-      </a>
+    <a href="{{ site.url }}"><span>Home</span></a>
   </li>
 
   <li>
     {% for tag in page.categories %}
-     
-    <a href="{{ site.url }}/categories/#{{ tag | slugify }}">
-      <span>{{ tag }}</span>
-      </a>
-
+    <a href="{{ site.url }}/categories/#{{ tag | slugify }}"><span>{{ tag }}</span></a>
     {% endfor %}
   </li>
 
   <li>
-    <a href="{{ site.url }}{{ page.url }}">
-      <span>{{ page.title }}</span>
-      </a>
+    <a href="{{ site.url }}{{ page.url }}"><span>{{ page.title }}</span></a>
   </li>
 </ol>
 

@@ -1,27 +1,78 @@
 {% if page.comments %}
-        <div class="box">
-        <h4 class="title">Comments</h4>
-        <hr>
-        <div id="disqus_thread"></div>
-        </div>
-
-        <script>
-
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://rockitech.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
+<div class="box">
+    <h4 class="title">
+        Comments
+    </h4>
+    <hr>
+        <script type="text/javascript">
+            var dataPath="https://cdn.rockitech.net/comments/get?path={{ page.url | absolute_url | uri_escape }}";
         </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}
+        <script src="/static/js/comments.js">
+        </script>
+        <div id="comments-generate">
+            <div class="cssload-container">
+                <div class="cssload-whirlpool">
+                </div>
+            </div>
+            <br>
+        </div>
+        <article class="media comment">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="/static/img/user-icon.png">
+    </p>
+  </figure>
+  <div class="media-content">
+    <form action="{{ site.commentsPath }}" method="POST">
+                <div class="field">
+                    <div class="field-body">
+                        <div class="field is-grouped">
+                            <p class="control is-expanded">
+                                <input class="input" name="name" placeholder="Name" type="text">
+                                </input>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea" name="comment" placeholder="Enter your comment"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-label">
+                        <!-- Left empty for spacing -->
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <div class="g-recaptcha" data-sitekey="6LcTyyYUAAAAAH5OOPE3J2TSNqd9SEU8QVL8nd0L">
+                                </div>
+                                <input name="path" type="hidden" value="{{ site.url }}{{ page.url }}">
+                                </input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary">
+                                    Post comment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+  </div>
+</article>
+            {% endif %}
+        </hr>
+    </hr>
+</div>
