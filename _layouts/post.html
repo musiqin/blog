@@ -75,7 +75,7 @@ Time: {% assign words = content | number_of_words %}
   {% endif %} read
   <br>
       Category: {% for tag in page.categories %}
-       <a class="tag" href="/categories/#{{ tag | slugify }}">{{ tag }}</a> 
+       <a class="tag" href="/categories/#{{ tag | slugify }}">{{ tag | replace: "-", " " }}</a> 
      {% endfor %}
      <br>
 Tags: {% for tag in page.tags %}

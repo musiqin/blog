@@ -54,7 +54,7 @@
      Array.prototype.forEach.call(section, function(e) {
          sections[e.id] = e.offsetTop + (5 * viewportHeight / 8);
      });
-     console.log(start,stop);
+     //console.log(start,stop);
      window.onscroll = function(e) {
          var scrollPosition = hasOffset ? window.pageYOffset : docBody.scrollTop;
          if (scrollPosition >= start && scrollPosition <= stop) {

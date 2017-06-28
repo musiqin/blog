@@ -80,11 +80,13 @@ function commentsGenerate(data) {
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.open('GET', dataPath, true);
 xmlhttp.onreadystatechange = function() {
+    
     if (xmlhttp.readyState == 4) {
         if (xmlhttp.status == 200) {
             var obj = JSON.parse(xmlhttp.responseText);
             commentsGenerate(obj);
-        } else if (xmlhttp.status >= 400) {
+        } else{
+            var el = document.getElementById('comments-generate');
             el.innerHTML = '<div class="message">\
   <div class="message-body">\
     <span class="icon"><i class="fa fa-info"></i></span> The comments server encountered a problem. Try again later!\

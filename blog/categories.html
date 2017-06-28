@@ -14,7 +14,7 @@ permalink: /categories/
         {% for tag in site.categories %}
             <li>
                 <a class="post-tag" href="#{{ tag[0] | slugify }}">
-                    {{ tag[0] }}
+                    {{ tag[0] | replace: "-", " " }}
                 </a>
             </li>
         {% endfor %}
@@ -24,7 +24,7 @@ permalink: /categories/
     <div class="tags-expo-section content">
         {% for tag in site.categories %}
         <h2 id="{{ tag[0] | slugify }}">
-            {{ tag[0] }}
+            {{ tag[0] | replace: "-", " " }}
         </h2>
         <ul class="tags-expo-posts">
             {% for post in tag[1] %}

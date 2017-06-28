@@ -268,7 +268,6 @@ pre.highlight code {
 .breadcrumbs ol li a {
     color: white;
     padding: 10px 4px;
-    border-radius: 3px;
 }
 
 .breadcrumbs ol li a:hover {

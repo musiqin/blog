@@ -30,7 +30,7 @@
     "position": 2,
     "item": {
       "@id": "{% for tag in page.categories %}{{ site.url }}/categories/#{{ tag | slugify }}{% endfor %}",
-      "name": "{% for tag in page.categories %}{{ tag }}{% endfor %}"
+      "name": "{% for tag in page.categories %}{{ tag | replace: "-", " " }}{% endfor %}"
     }
   },{
     "@type": "ListItem",
