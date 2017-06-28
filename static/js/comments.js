@@ -42,16 +42,15 @@ function timeAgo(time) {
 
 function commentsGenerate(data) {
     var el = document.getElementById('comments-generate');
-    
     if (data.length < 1) {
-      el.innerHTML = '<div class="message">\
+        el.innerHTML = '<div class="message">\
   <div class="message-body">\
-    <span class="icon"><i class="fa fa-info"></i></span>No comments where found for this post. Be the first!\
+    <span class="icon"><i class="fa fa-info"></i></span> No comments where found for this post. Be the first!\
   </div>\
 </div>\
 <br>';
     } else {
-      el.innerHTML = "";
+        el.innerHTML = "";
         data.forEach(function(entry) {
             //console.log(entry);
             // Make a new div
@@ -85,6 +84,13 @@ xmlhttp.onreadystatechange = function() {
         if (xmlhttp.status == 200) {
             var obj = JSON.parse(xmlhttp.responseText);
             commentsGenerate(obj);
+        } else if (xmlhttp.status >= 400) {
+            el.innerHTML = '<div class="message">\
+  <div class="message-body">\
+    <span class="icon"><i class="fa fa-info"></i></span> The comments server encountered a problem. Try again later!\
+  </div>\
+</div>\
+<br>';
         }
     }
 };
