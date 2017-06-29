@@ -33,7 +33,7 @@ We can write WebAssembly modules in C and compile them to .wasm files. These was
 
 In the future, these steps would be redundant and could be replaced by WebAssembly frameworks and native wasm module support.
 
-## Can I use Web Assembly now?
+## Using WebAssembly?
 
 The initial version of WebAssembly has reached cross-browser consensus. That means WebAssembly CG members representing four browsers, Chrome, Edge, Firefox, and WebKit, have reached a consensus that the design of the initial (MVP) WebAssembly API and the binary format is complete to the extent that no further design work is possible without implementation experience and significant usage. This marks the end of the Browser Preview and signals that browsers can begin shipping WebAssembly on-by-default. As of right now, WebAssembly can be used in Chrome and Firefox, with Edge and Safari support almost complete as well. This means that very soon, you will be able to run wasm in every popular web browser.
 
