@@ -14,7 +14,7 @@ toc: true
 ---
 
 
-> WebAssembly or wasm is a new portable, size- and load-time-efficient format suitable for compilation to the web.
+> WebAssembly or wasm is a new portable, size- and load-time-efficient format suitable for compilation to the web. WebAssembly is currently being designed as an open standard by a W3C Community Group that includes representatives from all major browsers. 
 
 WebAssembly is a new technology that makes it possible to run highly performance, low-level code in the browser itself. It can be used to bring large C and C++ codebases like games, physics engines and even desktop apps to the web platform.
 
