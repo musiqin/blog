@@ -29,7 +29,7 @@
     "item": {
       "@id": "{{ site.url }}{{ page.url }}",
       "name": "{{ page.title }}",
-      "image": "{{ site.url }}{{ page.image.path }}"
+      "image": "{{ page.image.path | absolute_url }}"
     }
   }]
 }
