@@ -20,8 +20,16 @@
     {% endcomment %}
 
     {% capture my_toc %}{% endcapture %}
+
     {% assign minHeader = include.h_min | default: 1 %}
     {% assign maxHeader = include.h_max | default: 6 %}
+
+    {% if page.tocCustom %}
+
+        {% assign minHeader = page.tocCustom.min %}
+        {% assign maxHeader = page.tocCustom.max %}
+    {% endif %}
+
     {% assign nodes = include.html | split: '<h' %}
 
     {% for node in nodes %}

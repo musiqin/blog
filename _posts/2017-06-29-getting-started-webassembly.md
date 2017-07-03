@@ -11,6 +11,9 @@ image:
   height: 800
   width: 800
 toc: true
+tocCustom:
+  min: 2
+  max: 2
 ---
 
 
@@ -51,7 +54,7 @@ We will be using Emscripten portable. [Download Emscripten](https://kripken.gith
 * A compiler for C (GCC on Linux, Xcode on OS X, Visual Studio for Windows).
 * Simple local web server to run the example (e.g. `python -m SimpleHTTPServer 9000` or you can use Apache if you already have it installed)
 
-## 1) Hello World!
+## 1. Hello World!
 
 We will create a simple wasm code that will output Hello World string.
 
@@ -124,7 +127,7 @@ Now in the browser, go to `localhost:9000` to view the app. If you open the brow
 Hello World
 ```
 
-## 2) Dice Roll!
+## 2. Dice Roll!
 
 
 We will now create another simple wasm code that picks a random number between 1 and 6.

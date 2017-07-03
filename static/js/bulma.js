@@ -48,11 +48,13 @@
          hasOffset = window.pageYOffset !== undefined,
          viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight.
      scrollTop;
-     var section = document.querySelectorAll("h2[id],h3[id],h4[id],h5[id],h6[id]");
+     var section = document.querySelectorAll("#my_toc a[href]");
      var sections = {};
      var i = 0;
      Array.prototype.forEach.call(section, function(e) {
-         sections[e.id] = e.offsetTop + (5 * viewportHeight / 8);
+        var hash    =  e.hash.substr(1),
+            header  =  document.getElementById(hash);
+         sections[hash] = header.offsetTop + (5 * viewportHeight / 8);
      });
      //console.log(start,stop);
      window.onscroll = function(e) {
@@ -75,8 +77,10 @@
          }
          for (i in sections) {
              if (sections[i] <= scrollPosition) {
+                console.log(i);
                  (document.querySelector('#my_toc .active') != null) ? document.querySelector('#my_toc .active').setAttribute('class', ' '): null;
                  document.querySelector('#my_toc li a[href="#' + i + '"]').setAttribute('class', 'active');
+
              }
          }
      };
