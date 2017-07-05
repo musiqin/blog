@@ -42,4 +42,4 @@ gems:
 #  - jekyll-admin
   - jekyll-toc
 
-commentsPath: "https://cdn.rockitech.net/comments/add"
+commentsPath: "http://cdn.rockitech.net/comments/add"

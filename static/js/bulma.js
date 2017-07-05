@@ -77,7 +77,7 @@
          }
          for (i in sections) {
              if (sections[i] <= scrollPosition) {
-                console.log(i);
+                //console.log(i);
                  (document.querySelector('#my_toc .active') != null) ? document.querySelector('#my_toc .active').setAttribute('class', ' '): null;
                  document.querySelector('#my_toc li a[href="#' + i + '"]').setAttribute('class', 'active');
 
