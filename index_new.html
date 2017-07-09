@@ -8,6 +8,9 @@ noBreadcrumbs: true
   .masonry-grid{
     
   }
+  .post-author{
+      color:#d5dbde;
+  }
   .post-date {
     display: inline-block;
     margin-left: 8px;
@@ -82,18 +85,16 @@ opacity: .7;}
           <div class="media">
             <div class="media-content">
               <p class="title is-4"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></p>
-              <p class="subtitle is-6">@{{ post.author }}</p>
+              
             </div>
           </div>
 
           <div class="content">
             <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
-            
-            {% for tag in post.categories %}
+            <span class="post-author"><p class="subtitle is-6">@{{ post.author }}</p> on {% for tag in post.categories %}
              <a href="/categories/#{{ tag | slugify }}">#{{ tag | replace: "-", " " }}</a> 
-           {% endfor %}
-            <br>
-            <small>{{ post.date | date_to_string }}</small>
+           {% endfor %}</span>
+            <small class="post-date">{{ post.date | date_to_string }}</small>
           </div>
         </div>
       </div>
