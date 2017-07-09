@@ -92,7 +92,7 @@ opacity: .7;}
           <div class="content">
             <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
             <span class="post-author"><p class="subtitle is-6">@{{ post.author }}</p> on {% for tag in post.categories %}
-             <a href="/categories/#{{ tag | slugify }}">#{{ tag | replace: "-", " " }}</a> 
+             <a style="display:inline-block" href="/categories/#{{ tag | slugify }}">#{{ tag | replace: "-", " " }}</a> 
            {% endfor %}</span>
             <small class="post-date">{{ post.date | date_to_string }}</small>
           </div>
