@@ -76,6 +76,8 @@ opacity: .7;}
           </div>
 
           <div class="content">
+            <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+            
             {% for tag in post.categories %}
              <a href="/categories/#{{ tag | slugify }}">#{{ tag | replace: "-", " " }}</a> 
            {% endfor %}
