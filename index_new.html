@@ -4,12 +4,16 @@ title: Home
 pagination: true
 noBreadcrumbs: true
 ---
-
+<style type="text/css">
+.grid-sizer,
+.grid-item { width: 25%; }
+</style>
 <h2 class="title">Blog</h2>
               <hr>
     <div class="masonry-grid">
+      <div class="grid-sizer"></div>
     {% for post in site.posts %}
-    <div class="brick">
+    <div class="grid-item">
       <div class="card">
         <div class="card-image">
           <figure class="image is-128x128">
@@ -40,52 +44,15 @@ noBreadcrumbs: true
     </div>
     {% endfor %}
 </div>
-<script type="text/javascript" src="https://unpkg.com/bricks.js@1.8.0/dist/bricks.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.0/masonry.pkgd.min.js"></script>
 <script type="text/javascript">
-  ! function() {
-    "use strict";
-    var t = function(t) {
-            return Array.prototype.slice.call(document.querySelectorAll(t))
-        },
-        e = function(t, e) {
-            return Math.floor(Math.random() * (e - t + 1) + t)
-        },
-        n = function(t) {
-            var e = Date.now();
-            return t(), Date.now() - e
-        },
-        r = function(t, e) {
-            for (var n = 0; n < t; n++) e()
-        },
-        a = {
-            container: ".masonry-grid",
-            packed: "data-packed",
-            sizes: [{ columns: 1, gutter: 10 },                   // assumed to be mobile, because of the missing mq property
-  { mq: '768px', columns: 2, gutter: 25 },
-  { mq: '1024px', columns: 3, gutter: 50 }]
-        },
-        c = Bricks(a).resize(!0),
-        o = function() {
-            var t = document.querySelector("[data-grid]"),
-                a = document.querySelector("[data-input]"),
-                o = document.querySelector("[data-result]"),
-                u = parseInt(a.value || a.getAttribute("placeholder"), 10),
-                i = document.createDocumentFragment();
-            r(u, function() {
-                var t = document.createElement("div");
-                t.classList.add("grid-item"), t.style.height = e(50, 350) + "px", i.appendChild(t)
-            }), t.innerHTML = "", t.appendChild(i), o.classList.remove("is-animating"), o.textContent = n(c.pack) + " ms", o.classList.add("is-animating")
-        },
-        u = function() {
-            t("[data-reload]").forEach(function(t) {
-                t.addEventListener("click", function(t) {
-                    t.preventDefault(), o()
-                })
-            }), o()
-        };
-    document.addEventListener("DOMContentLoaded", function(t) {
-        return u()
-    })
-}();
+var elem = document.querySelector('.masonry-grid');
+var msnry = new Masonry( elem, {
+  // options
+  itemSelector: '.grid-item',
+   // use element for option
+  columnWidth: '.grid-sizer',
+  percentPosition: true
+});
 
 </script>
