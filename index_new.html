@@ -5,7 +5,19 @@ pagination: true
 noBreadcrumbs: true
 ---
 <style type="text/css">
-.grid-sizer,
+  .post-date {
+    display: inline-block;
+    margin-left: 8px;
+    padding-left: 12px;
+    border-left: 1px solid #d5dbde;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    white-space: nowrap;
+}
+.grid-item .title{
+  font-weight: bold;
+  }
+  .grid-sizer,
 .grid-item { width: 30%;margin: 10px 15px; }
   figure.image{
     display: block;
@@ -14,6 +26,12 @@ noBreadcrumbs: true
     position: relative;
    
     overflow: hidden;
+  }
+  .grid-item figure.image img,.grid-item figure.image canvas{
+   -webkit-transition: transform,opacity 1s ease-out;
+  -moz-transition: transform,opacity 1s ease-out;
+  -o-transition: transform,opacity 1s ease-out;
+  transition: transform,opacity 1s ease-out;
   }
   .grid-item:hover figure.image img,.grid-item:hover figure.image canvas{-webkit-transform: scale(1.5);
 transform: scale(1.5);
