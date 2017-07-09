@@ -79,6 +79,7 @@ opacity: .7;}
     <div class="grid-item">
       <div class="card">
         <div class="card-image">
+          <a href="{{ post.url }}" title="{{ post.title }}">
           <figure class="image is-1by1">
             {% unless post.image == site.defaults[0].values.image %}
             <img src="{{ post.image.path }}" />
@@ -86,6 +87,7 @@ opacity: .7;}
             <canvas width="256" height="256" class="identicons" data-jdenticon-url="hashCode('{{ post.url |slugify }}')"></canvas>
             {% endunless %}
           </figure>
+          </a>
         </div>
         <div class="card-content">
           <div class="media">
@@ -107,7 +109,7 @@ opacity: .7;}
     </div>
     {% endfor %}
 </div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.0/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src=""></script>
 <script type="text/javascript">
 var elem = document.querySelector('.masonry-grid');
 var msnry = new Masonry( elem, {
