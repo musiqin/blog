@@ -7,6 +7,28 @@ noBreadcrumbs: true
 <style type="text/css">
 .grid-sizer,
 .grid-item { width: 30%;margin: 10px 15px; }
+  figure.image{
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    margin: -1.5em -1.5em 0;
+    overflow: hidden;
+}
+   figure.image::after{
+      content: '';
+    position: absolute;
+    bottom: -2em;
+    left: -5%;
+    width: 110%;
+    height: 4em;
+    background: #fff;
+    border-top: 4px solid #ed0677;
+    -moz-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+}
+  }
 </style>
 <h2 class="title">Blog</h2>
               <hr>
@@ -16,7 +38,7 @@ noBreadcrumbs: true
     <div class="grid-item">
       <div class="card">
         <div class="card-image">
-          <figure class="image is-128x128">
+          <figure class="image is-1by1">
             {% unless post.image == site.defaults[0].values.image %}
             <img src="{{ post.image.path }}" />
             {% else %}
