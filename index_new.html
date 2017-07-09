@@ -8,6 +8,12 @@ noBreadcrumbs: true
   .masonry-grid{
     
   }
+  .read-more{
+    text-decoration: none;
+font-weight: 700;
+position: relative;
+display: inline-block;
+  }
   .post-author{
       color:#9eabb3;
   }
@@ -90,7 +96,7 @@ opacity: .7;}
           </div>
 
           <div class="content">
-            <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+            <p>{{ post.content | strip_html | truncatewords: 50 }} <a class="read-more" href="{{ post.url }}" title="{{ post.title }}">Read More &gt;</a></p>
             <span class="post-author">{{ post.author }} on {% for tag in post.categories %}
              <a style="display:inline-block" href="/categories/#{{ tag | slugify }}">#{{ tag | replace: "-", " " }}</a> 
            {% endfor %}</span>
