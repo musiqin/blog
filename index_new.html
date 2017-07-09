@@ -7,9 +7,9 @@ noBreadcrumbs: true
 
 <h2 class="title">Blog</h2>
               <hr>
-    <div class="columns is-multiline is-mobile">
+    <div class="masonry-grid">
     {% for post in site.posts %}
-    <div class="column is-3">
+    <div class="brick">
       <div class="card">
         <div class="card-image">
           <figure class="image is-1by1">
@@ -40,3 +40,41 @@ noBreadcrumbs: true
     </div>
     {% endfor %}
 </div>
+<script type="text/javascript" src="https://unpkg.com/bricks.js@1.8.0/dist/bricks.js"></script>
+<script type="text/javascript">
+// import Bricks
+
+import Bricks from 'bricks.js'
+
+// define your grid at different breakpoints, mobile first (smallest to largest)
+
+const sizes = [
+  { columns: 1, gutter: 10 },                   // assumed to be mobile, because of the missing mq property
+  { mq: '768px', columns: 3, gutter: 25 },
+  { mq: '1024px', columns: 4, gutter: 50 }
+]
+
+// create an instance
+
+const instance = Bricks({
+  container: '.masonry-grid',
+  packed:    'data-packed',        // if not prefixed with 'data-', it will be added
+  sizes:     sizes
+})
+
+// bind callbacks
+
+instance
+  .on('pack',   () => console.log('ALL grid items packed.'))
+  .on('update', () => console.log('NEW grid items packed.'))
+  .on('resize', size => console.log('The grid has be re-packed to accommodate a new BREAKPOINT.'))
+
+// start it up, when the DOM is ready
+// note that if images are in the grid, you may need to wait for document.readyState === 'complete'
+
+document.addEventListener('DOMContentLoaded', event => {
+  instance
+    .resize(true)     // bind resize handler
+    .pack()           // pack initial items
+})
+</script>
