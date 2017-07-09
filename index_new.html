@@ -54,8 +54,8 @@ display: inline-block;
   transition: all 1s ease-out;
   }
   .grid-item:hover figure.image img,.grid-item:hover figure.image canvas{-webkit-transform: scale(1.5);
-transform: scale(1.5);
-opacity: .7;}
+transform: scale(1.25);
+opacity: .8;}
    figure.image::after{
       content: '';
     position: absolute;
@@ -71,9 +71,8 @@ opacity: .7;}
 }
   }
 </style>
-<h2 class="title">Blog</h2>
-              <hr>
-    <div class="masonry-grid">
+
+<div class="masonry-grid">
       <div class="grid-sizer"></div>
     {% for post in site.posts %}
     <div class="grid-item">
