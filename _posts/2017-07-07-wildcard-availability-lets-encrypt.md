@@ -24,3 +24,6 @@ For the non-tech people out there, A wildcard certificate can secure any number 
 The new wildcard certificates will be offered free of charge via the upcoming [ACME v2 endpoint](https://letsencrypt.org/2017/06/14/acme-v2-api.html).
 
 If you’re excited about wildcard availability, please for the love of God, donate to their [summer fundraising campaign](https://letsencrypt.org/donate/). They are a non-profit organization that exists thanks to the support of the community.
+
+Source:
+* [Let's Encrypt: Blog](https://letsencrypt.org/2017/07/06/wildcard-certificates-coming-jan-2018.html)
