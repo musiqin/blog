@@ -5,7 +5,7 @@
 
   <li>
     {% for tag in page.categories %}
-    <a href="{{ site.url }}/categories/#{{ tag | slugify }}"><span>{{ tag }}</span></a>
+    <a href="{{ site.url }}/categories/#{{ tag | slugify }}"><span>{{ tag | replace: "-", " " }}</span></a>
     {% endfor %}
   </li>
 
