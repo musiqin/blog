@@ -1,26 +1,31 @@
 {% if paginator.total_pages > 1 %}
-<nav class="box pagination">
-  {% if paginator.previous_page %}
-    <a rel="prev" class="pagination-previous" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Previous</a>
-  {% else %}
-    <a class="pagination-previous" disabled>Previous</a>
-  {% endif %}
+<div class="box">
+    <nav class="pagination">
+        {% if paginator.previous_page %}
+        <a class="pagination-previous" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" rel="prev">
+            Previous
+        </a>
+        {% else %}
+        <a class="pagination-previous" disabled="">
+            Previous
+        </a>
+        {% endif %}
 
 
 {% if paginator.next_page %}
-    <a rel="next" class="pagination-next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next page</a>
-  {% else %}
-    <a class="pagination-next" disabled>Next page</a>
-  {% endif %}
-
-  
-  <ul class="pagination-list">
-    <li class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
-  
-    <!--<li>
-      <span class="pagination-ellipsis">&hellip;</span>
-    </li>-->
-    
-  </ul>
-</nav>
+        <a class="pagination-next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" rel="next">
+            Next page
+        </a>
+        {% else %}
+        <a class="pagination-next" disabled="">
+            Next page
+        </a>
+        {% endif %}
+        <ul class="pagination-list">
+            <li class="page_number ">
+                Page {{ paginator.page }} of {{ paginator.total_pages }}
+            </li>
+        </ul>
+    </nav>
+</div>
 {% endif %}

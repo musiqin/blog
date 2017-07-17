@@ -1,16 +1,26 @@
-{% include header.html %}
+{% include header_new.html %}
 <section class="hero is-default is-small post-banner splash-header splash-header-main" style="">
   <div class="hero-body" id="title-box">
     <div class="container glass-overlay">
     <div class="columns column-centered post-header">
+    <!--<div class="column is-narrow post-image">
+      <figure class="image is-128x128">
+                  {% unless page.image.path == site.defaults[0].values.image.path %}
+                  <img src="{{ page.image.path }}" title="{{ page.title }}" alt="{{ page.title }}" />
+                  {% else %}
+                  <canvas width="128" height="128" class="identicons" data-jdenticon-url="hashCode('{{ page.url |slugify }}')"></canvas>
+                  {% endunless %}
+                </figure>
+  </div>-->
     
+  
   <div class="column">
     <h1 class="title">
-        Rockitech Blog!
+        Rockitech Blog
       </h1>
 
-      <span class="subtitle">
-        Simple Web Development Blog
+      <span class="author">
+        A place for all things web development!
       </span>
   
 </div>
@@ -19,7 +29,8 @@
     </div>
   </div>
 </section>
-<section class="section main">
+
+<section class="section main" style="background-color: white">
     <div class="container">
       <div class="columns">
         
@@ -54,4 +65,4 @@
 {% if page.noBreadcrumbs==blank %}
 <div class="breadcrumbs">{% include blog_breadcrumbs.html %}</div>
 {% endif %}
-{% include footer.html %}
+{% include footer_new.html %}

@@ -1,49 +1,46 @@
 {% include header.html %}
 
 <section class="section main">
-    <div class="container">
+    <div class="">
       <div class="columns">
-        <div class="column is-3">
+        <div class="column is-3 is-offset-1">
           <div class="card is-fullwidth user-sidebar">
             <header class="card-header splash-header">
             </header>
             <div class="card-content">
               <a class="card-avatar">
-                <img src="/static/pics/shami.png" class="card-avatar-img" alt="Avatar Image">
+                <img src="/static/img/logo-card.png" class="card-avatar-img" alt="Avatar Image">
               </a>
 
               <div class="card-user">
                 <div class="card-user-name">
-                  <strong>Shameem A.R.</strong>
+                  <h1 class="title is-4"><strong>{{ site.name }}</strong></h1>
                 </div>
-                <span>
-                  <a href="https://github.com/mobihack">@<span>mobihack</span></a>
-                </span>
               </div>
-
+              <br>
               <div class="card-stats">
-              <script type="text/javascript" async src="https://www.brainyquote.com/link/quotebr.js"></script>
+              <p class="small">Basically, most of our post addresses problems we had difficulty finding an answer by ourselves or searching online. We also post articles related to new technologies and tools in the fields of web designing, programming and server management.</p>
               </div>
             </div>
           </div>
-          
           <div class="box trending">
-            <p class="trend-title"><span class="title is-5">Categories</span></p>
+          <p class="trend-title"><span class="title is-5">Categories</span> · <a href="/categories/">all</a></p>
             <hr>
             {% assign tags_list = site.categories %}  
               {% if tags_list.first[0] == null %}
                 {% for tag in tags_list %} 
-                  <p class="trend-hashtag"><a href="/categories/#{{ tag | slugify }}">#{{ tag | replace: "-", " " | capitalize }}</a><br>{{ site.tags[tag].size }} posts</p>
+                  <p class="trend-hashtag"><a href="/categories/#{{ tag | slugify }}">#{{ tag | replace: "-", " " | capitalize }}</a> <span class="tag">{{ site.tags[tag].size }}</span></p>
                 {% endfor %}
               {% else %}
                 {% for tag in tags_list %} 
-                <p class="trend-hashtag"><a href="/categories/#{{ tag[0] | slugify }}">#{{ tag[0] | replace: "-", " " | capitalize }}</a><br>{{ tag[1].size }} posts</p>
+                <p class="trend-hashtag"><a href="/categories/#{{ tag[0] | slugify }}">#{{ tag[0] | replace: "-", " " | capitalize }}</a> <span class="tag">{{ tag[1].size }}</span></p>
                 {% endfor %}
               {% endif %}
             {% assign tags_list = nil %}
           </div>
+          
         </div>
-        <div class="column is-6">
+        <div class="column is-7">
           <!--<div class="notification is-danger">
             <button class="delete" onclick="((this).parentNode.remove())"></button>
             This blog is not yet finished, it may change. Please wait for the full version.
@@ -67,12 +64,9 @@
             {% include blog_paginate.html %}
           {% endif %}
         </div>
-        <div class="column is-3">
-          <div class="box">
-            <p><span class="title is-5">About</span></p>
-            <hr>
-            <p class="small">Basically, most of our post addresses problems we had difficulty finding an answer by ourselves or searching online. We also post articles related to new technologies and tools in the fields of web designing, programming and server management.</p>
-            </div>
+
+        <!--<div class="column is-3">
+        
 
           <div class="box">
             <p><span class="title is-5">Who to follow</span></p>
@@ -104,7 +98,7 @@
             {% endfor %}
             </div>
           
-          </div>
+          </div>-->
         </div>
       </div>
   </section>

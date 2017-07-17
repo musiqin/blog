@@ -31,7 +31,7 @@ permalink: /p/:categories/:title.html
 
 related_posts_max: 4
 
-paginate: 6
+paginate: 12
 paginate_path: "/page-:num/"
 
 gems:
@@ -42,4 +42,4 @@ gems:
 #  - jekyll-admin
   - jekyll-toc
 
-commentsPath: "http://cdn.rockitech.net/comments/add"
+commentsPath: "https://cdn.rockitech.net/comments/add"

@@ -11,7 +11,7 @@
 		<link rel="shortcut icon" href="/favicon.ico?v=1" type="image/x-icon">
 
 		<!-- Vendor CSS-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- Custom Css -->
@@ -30,37 +30,28 @@
 		{% endif %}
 	</head>
 	<body>
+	<nav class="nav has-shadow" id="top">
+		<div class="container">
+			<div class="nav-left">
+				<a class="nav-item" href="/">
+					<img src="{{ site.logo }}" alt="RockiTech.Net - Web Design, Programming and Server Management!" />
+				</a>
+			</div>
+			<span class="nav-toggle">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+  			</span>
+  			
+			<div class="nav-right nav-menu">
 
-	<nav class="navbar">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="{{ site.logo }}" alt="RockiTech.Net - Web Design, Programming and Server Management!" />
-    </a>
-
-    <div class="navbar-burger burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <div class="navbar-menu">
-    <div class="navbar-start">
-	    <div class="navbar-item has-dropdown is-hoverable">
-	        <a class="navbar-link" href="#dropdown-menu">
-	          Blog
-	        </a>
-	        <div class="navbar-dropdown is-boxed">
-	  		<a class="navbar-item" href="/archive/">archive</a>
-			<a class="navbar-item" href="/categories/">categories</a>
-			<a class="navbar-item" href="/feed/">feeds</a>
-			<a class="navbar-item" href="/tags/">tags</a>
-	      </div>
-	    </div>
-	</div>
-    <div class="navbar-end">
-
-      <form class="navbar-item" action="/search/" method="GET">
+				<a class="nav-item is-tab" href="/archive/">archive</a>
+				<a class="nav-item is-tab" href="/categories/">categories</a>
+				<a class="nav-item is-tab" href="/feed/">feeds</a>
+				<a class="nav-item is-tab" href="/tags/">tags</a>
+				
+				
+			<form action="/search/" method="GET">
 				<div class="field has-addons nav-item">
 				  <p class="control is-expanded-mobile">
 				    <input class="input" type="text" name="q" placeholder="search posts!">
@@ -77,7 +68,6 @@
 				  </p>
 				</div>
 				</form>
-      
-    </div>
-  </div>
-</nav>
+			</div>
+		</div>
+	</nav>

@@ -2,12 +2,15 @@
  // source: https://gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
  // Toggle menu for bulma nav
  (function() {
-     var burger = document.querySelector('.nav-toggle');
-     var menu = document.querySelector('.nav-menu');
-     burger.addEventListener('click', function() {
-         burger.classList.toggle('is-active');
-         menu.classList.toggle('is-active');
-     });
+     var burger = document.querySelector('.navbar-burger');
+     var menu = document.querySelector('.navbar-menu');
+     
+     if (burger!=null) {
+         burger.addEventListener('click', function() {
+             burger.classList.toggle('is-active');
+             menu.classList.toggle('is-active');
+         });
+     }
  })();
  //Generate hash
  String.prototype.hashCode = function() {
@@ -52,8 +55,8 @@
      var sections = {};
      var i = 0;
      Array.prototype.forEach.call(section, function(e) {
-        var hash    =  e.hash.substr(1),
-            header  =  document.getElementById(hash);
+         var hash = e.hash.substr(1),
+             header = document.getElementById(hash);
          sections[hash] = header.offsetTop + (5 * viewportHeight / 8);
      });
      //console.log(start,stop);
@@ -77,10 +80,9 @@
          }
          for (i in sections) {
              if (sections[i] <= scrollPosition) {
-                //console.log(i);
+                 //console.log(i);
                  (document.querySelector('#my_toc .active') != null) ? document.querySelector('#my_toc .active').setAttribute('class', ' '): null;
                  document.querySelector('#my_toc li a[href="#' + i + '"]').setAttribute('class', 'active');
-
              }
          }
      };
@@ -106,7 +108,6 @@
              links = document.getElementsByTagName('a'),
              href;
          for (var i = 0; i < links.length; i++) {
-
              href = (links[i].attributes.href === undefined) ? null : links[i].getAttribute("href");
              if (href !== null && href.length > 1 && href.indexOf('#') != -1) // href.substr(0, 1) == '#'
              {
