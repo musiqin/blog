@@ -43,6 +43,15 @@
  }
  (function() {
      'use strict';
+     function generateHashOffset(section){
+        var sections = {};
+        Array.prototype.forEach.call(section, function(e) {
+         var hash = e.hash.substr(1),
+             header = document.getElementById(hash);
+         sections[hash] = header.offsetTop + (5 * viewportHeight / 8);
+     });
+        return sections;
+     }
      var left = document.getElementById("fixed-toc"),
          content = document.getElementById("post-content"),
          start = left.offsetTop + left.offsetHeight,
@@ -50,16 +59,15 @@
          docBody = document.documentElement || document.body.parentNode || document.body,
          hasOffset = window.pageYOffset !== undefined,
          viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight.
-     scrollTop;
-     var section = document.querySelectorAll("#my_toc a[href]");
-     var sections = {};
+    scrollTop;
+    var section = document.querySelectorAll("#my_toc a[href]");
+    var sections = generateHashOffset(section);
+    window.onresize = function(event) {
+        var sections = generateHashOffset(section);
+    };
      var i = 0;
-     Array.prototype.forEach.call(section, function(e) {
-         var hash = e.hash.substr(1),
-             header = document.getElementById(hash);
-         sections[hash] = header.offsetTop + (5 * viewportHeight / 8);
-     });
-     //console.log(start,stop);
+     
+     
      window.onscroll = function(e) {
          var scrollPosition = hasOffset ? window.pageYOffset : docBody.scrollTop;
          if (scrollPosition >= start && scrollPosition <= stop) {
@@ -87,6 +95,7 @@
          }
      };
  })();
+ 
  /*
   * - autoSmoothScroll -
   * Licence MIT

@@ -13,7 +13,7 @@ image:
 toc: false
 ---
 
-Let’s Encrypt will begin issuing wildcard certificates in January of 2018. Wildcard certificates are a commonly requested feature and they understand that there are some use cases where they make HTTPS deployment easier. Their hope is that offering wildcards will help to accelerate the Web’s progress towards 100% HTTPS.
+Let's encrypt has posted in their blog that they will begin issuing wildcard certificates in January of 2018. Wildcard certificate was a commonly requested feature in their support community. It's wonderfull to see that they understand that they make HTTPS deployment easier. Their hope is that offering wildcards will help to accelerate the Web’s progress towards 100% HTTPS.
 
 For the uninitiated, Let's Encrypt is a certificate authority that launched on April 12, 2016, that provides free X.509 certificates for Transport Layer Security (TLS) encryption via an automated process designed to eliminate the current complex process of manual creation, validation, signing, installation, and renewal of certificates for secure websites.
 
