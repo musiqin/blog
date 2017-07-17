@@ -605,7 +605,13 @@ display: inline-block;
 .grid-item .title{
   font-weight: bold;
   }
+  .grid-sizer, .grid-item { width: 25%; }
+  @media screen and (max-width:px) {
+  .grid-sizer, .grid-item { width: 50%; }
+  }
+  @media screen and (max-width:1000px) {
   .grid-sizer, .grid-item { width: 33%; }
+  }
   @media screen and (max-width:768px) {
   .grid-sizer, .grid-item { width: 50%; }
   }
@@ -632,7 +638,7 @@ display: inline-block;
   .grid-item:hover figure.image img,.grid-item:hover figure.image canvas{-webkit-transform: scale(1.5);
 transform: scale(1.25);
 opacity: .8;}
-   figure.image::after{
+   .grid-item figure.image::after{
       content: '';
     position: absolute;
     bottom: -2em;
