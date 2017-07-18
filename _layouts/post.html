@@ -38,17 +38,19 @@
   <section class="section blog">
     <div class="container">
       <div class="columns">
+
+      {% if page.toc %}
         <div id="fixed-toc">
-          {% if page.toc %}
           <div class="title">Contents</div>
             {% include post_toc.html html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
-          {% endif %}
           <a class="button" id="mark-as-complete">
             <span class="icon is-small">
               <i class="fa fa-check-circle-o"></i>
             </span> <span>Mark as Complete</span>
           </a>
         </div>
+        {% endif %}
+        
         <div class="column is-offset-2 is-8">
           <div class="content blog-post" id="post-content">
             <p class="has-text-right has-text-muted">{{ page.date | date_to_string }}</p>
