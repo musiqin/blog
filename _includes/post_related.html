@@ -27,11 +27,11 @@
     {% if sameTagCount >= minCommonTags %}
     <article class="media">
               <div class="media-left">
-                <figure class="image is-64x64">
+                <figure class="image is-96x96">
                   {% unless post.image == site.defaults[0].values.image %}
                   <img src="{{ post.image.path }}" />
                   {% else %}
-                  <canvas width="64" height="64" class="identicons" data-jdenticon-url="hashCode('{{ post.url |slugify }}')"></canvas>
+                  <canvas width="96" height="96" class="identicons" data-jdenticon-url="hashCode('{{ post.url |slugify }}')"></canvas>
                   {% endunless %}
                 </figure>
               </div>
@@ -39,23 +39,18 @@
                 <div class="content">
                     <strong>@{{ post.author }}</strong> <small class="is-pulled-right">{{ post.date | date_to_string }}</small>
                     <br>
-                    <h3><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+                    <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
                 </div>
                 <nav class="level is-mobile">
-                  <div class="level-left">
-                  {% assign shareUrl=post.url | absolute_url | uri_escape %}
-                    <a class="level-item" href="http://www.facebook.com/sharer.php?u={{ shareUrl }}" target="_blank">
-              <span class="icon is-small"><i class="fa fa-facebook"></i></span></a>
-                    <a class="level-item" href="http://twitter.com/share?url={{ shareUrl }}&text={{ post.title | uri_escape }}" target="_blank">
-            <span class="icon is-small"><i class="fa fa-twitter"></i></span></a>
-                  <a class="level-item" href="https://plusone.google.com/_/+1/confirm?hl=en&url={{ shareUrl }}" target="_blank">    
-            <span class="icon is-small"><i class="fa fa-google-plus"></i></span></a>
-                 </div>
-                 <div class="level right">{{ commonTags }}</div>
+                  <div class="level-left"></div>
+                 <div class="level right">{% for tag in post.categories %}
+       <a class="tag" href="/categories/#{{ tag | slugify }}">{{ tag | replace: "-", " " }}</a> 
+     {% endfor %}</div>
                 </nav>
 
               </div>
             </article>
+
 
 
       {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}

@@ -24,12 +24,10 @@ noBreadcrumbs: true
           <div class="media">
             <div class="media-content">
               <p class="title is-4"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></p>
-              
             </div>
           </div>
 
           <div class="content">
-            <p>{{ post.content | strip_html | truncatewords: 50 }} <a class="read-more" href="{{ post.url }}" title="{{ post.title }}">Read More &gt;</a></p>
             <span class="post-author">{{ post.author }} on {% for tag in post.categories %}
              <a style="display:inline-block" href="/categories/#{{ tag | slugify }}">#{{ tag | replace: "-", " " }}</a> 
            {% endfor %}</span>
