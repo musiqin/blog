@@ -1,8 +1,8 @@
 name: Vimaanam Blog
 
 description: "A blog dedicated to articles related to things like web development, design, server management..."
-url: "https://musiqin.github.io/blog0"
-enforce_ssl: "musiqin.github.io/blog0"
+url: "https://musiqin.github.io"
+enforce_ssl: "musiqin.github.io"
 
 logo: /static/img/logo.png
 
