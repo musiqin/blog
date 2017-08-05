@@ -1,8 +1,8 @@
-name: RockiTech Blog
+name: Vimaanam Blog
 
 description: "A blog dedicated to articles related to things like web development, design, server management..."
-url: "https://rockitech.net"
-enforce_ssl: "rockitech.net"
+url: "https://musiqin.github.io/blog0"
+enforce_ssl: "musiqin.github.io/blog0"
 
 logo: /static/img/logo.png
 
@@ -42,4 +42,4 @@ gems:
 #  - jekyll-admin
   - jekyll-toc
 
-commentsPath: "https://cdn.rockitech.net/comments/add"
+commentsPath: "https://cdn.musiqin.github.io/blog0/comments/add"
